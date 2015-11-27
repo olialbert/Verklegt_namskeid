@@ -7,8 +7,8 @@ using namespace std;
 
 int main()
 {
-cout << "H" << endl;
-K�ri er bestur
+cout << "Heyy þetta á að vera Hellóó" << endl;
+K·ri er bestur
 
 
     return 0;
