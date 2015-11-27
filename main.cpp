@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-cout << "Hello world" << endl;
+cout << "H" << endl;
 Kári er bestur
 
 
