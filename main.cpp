@@ -8,6 +8,7 @@ using namespace std;
 int main()
 {
 cout << "Hello world" << endl;
+Kári er bestur
 
 
     return 0;
