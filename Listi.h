@@ -1,14 +1,19 @@
 #ifndef LISTI_H
 #define LISTI_H
+#include <iostream>
+using namespace std;
 
-
-class Listi
+class List
 {
     public:
-        Listi();
-        virtual ~Listi();
-    protected:
+        List(string name, string gender, int birthday, int age);
+        void getname();
+        
     private:
+		string name;
+		string gender;
+		int birthdate;
+		int age;
 };
 
-#endif // LISTI_H
+#endif

@@ -1,11 +1,15 @@
 #include "Listi.h"
 
-Listi::Listi()
+List::List(string proName, string proGender, int proBirthday, int proAge)
 {
-    //ctor
+    string name= proName;
+	string gender= proGender;
+	int birthdate= proBirthday;
+	int age= proAge;
 }
 
-Listi::~Listi()
+void getname()
 {
-    //dtor
+	return name;
 }
+

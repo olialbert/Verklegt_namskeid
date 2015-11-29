@@ -1,14 +1,16 @@
-#include <QCoreApplication>
+//#include <QCoreApplication>
 #include <fstream>
 #include <iostream>
 using namespace std;
 
 
-
 int main()
 {
-cout << "Heyy þetta á að vera Hellóó" << endl;
-K·ri er bestur
+  //stringset dataDoc;
+  //readString(dataDoc, "data.txt");
+
+
+	cout << "Enter a name of one pioneer programmer" << endl;
 
 
     return 0;
