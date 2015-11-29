@@ -1,18 +1,9 @@
-//#include <QCoreApplication>
-#include <fstream>
 #include <iostream>
-using namespace std;
 
+using namespace std;
 
 int main()
 {
-  //stringset dataDoc;
-  //readString(dataDoc, "data.txt");
-
-
-	cout << "Enter a name of one pioneer programmer" << endl;
-
-
+    cout << "Hér á ekki að vera neitt nema tengining í presintation layer/klasa" << endl;
     return 0;
 }
-
