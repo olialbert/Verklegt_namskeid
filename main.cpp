@@ -24,6 +24,7 @@ int main()
     Programmers programmers;
 
     do{
+        int deleteNum = 0;
         cout << "I choose the number ";
         cin >> choose;
         switch (choose){
@@ -38,10 +39,16 @@ int main()
          //   AddToList; // fall sem leifi notenandum að bæta við listan
             break;
         case 4:
+            cout << "Delete person number? ";
+            cin >> deleteNum;
+            programmers.rem(deleteNum);
           //  RemoveFromList; // fall sem leifir notendanum að fjarlægja úr listanum
             break;
         case 5:
          //   SortList; // fall sem leifir notendanum að endurraða listanum
+            break;
+        case 6:
+            programmers.save();
             break;
         default:
             if(choose != 6)
@@ -49,8 +56,6 @@ int main()
             break;
         }
     }while(choose != 6);
-
-
 
   //stringset dataDoc;
   //readString(dataDoc, "data.txt");

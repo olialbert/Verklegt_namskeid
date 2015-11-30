@@ -16,14 +16,14 @@ class Programmers
     public:
         Programmers();
         Programmer read();
+        void rem(int remNum);
         void add(Programmer p);
         void findAll(string sSearch);
 
-
+        void save();
     private:
         vector<Programmer> programmers;
         void load();
-        void save();
 };
 
 #endif

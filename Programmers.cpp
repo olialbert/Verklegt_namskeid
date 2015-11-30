@@ -10,7 +10,7 @@ Programmers::Programmers() {
 // format name;gender;birthday
 void Programmers::load() {
     ifstream pFile;
-    pFile.open("programmers.txt");
+    pFile.open("Programmers.txt");
     if(pFile.fail()){
         cout << "error" << endl;
         return;
@@ -32,10 +32,12 @@ void Programmers::load() {
     pFile.close();
 }
 void Programmers::save() {
-    // write all to programmers.txt
-    for (int i=0; i<programmers.size();i++) {
-        // TODO write to file
+   ofstream output;
+   output.open("Programmers.txt");
+    for (unsigned int i=0; i<programmers.size();i++) {
+        output << programmers[i].Name << ";" <<  programmers[i].Gender << ";" <<  programmers[i].Birthday << ";" <<  programmers[i].Deadday << endl;
     }
+    output.close();
 }
 Programmer Programmers::read() {
     Programmer p;
@@ -57,11 +59,14 @@ Programmer Programmers::read() {
 
 void Programmers::add(Programmer p) {
     programmers.push_back(p);
-    save();
+}
+
+void Programmers::rem(int remNum) {
+    programmers.erase(programmers.begin()+(remNum-1));
 }
 
 void Programmers::findAll(string sSearch) {
-    for (int i=0; i<programmers.size();i++) {
+    for (unsigned int i=0; i<programmers.size();i++) {
         //if (programmers[i].Name.find(sSearch) != string::npos) { // string::npos ef sSearch finnst ekki
             cout << i+1 << ". " << programmers[i].Name << " - " << programmers[i].Gender << " - " << programmers[i].Birthday << endl;
 
