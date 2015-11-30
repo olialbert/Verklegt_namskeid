@@ -51,6 +51,7 @@ Programmer Programmers::read() {
     cout << "Dead     : " ;
     cin >> p.Deadday;
 
+    add(p);
     return p;
 }
 
@@ -61,8 +62,9 @@ void Programmers::add(Programmer p) {
 
 void Programmers::findAll(string sSearch) {
     for (int i=0; i<programmers.size();i++) {
-        if (programmers[i].Name.find(sSearch) != string::npos) { // string::npos ef sSearch finnst ekki
-            cout << programmers[i].Name << " - " << programmers[i].Gender << " - " << programmers[i].Birthday << endl;
-        }
+        //if (programmers[i].Name.find(sSearch) != string::npos) { // string::npos ef sSearch finnst ekki
+            cout << i+1 << ". " << programmers[i].Name << " - " << programmers[i].Gender << " - " << programmers[i].Birthday << endl;
+
     }
 }
+

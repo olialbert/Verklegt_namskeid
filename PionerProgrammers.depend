@@ -1,14 +1,20 @@
 # depslib dependency file v1.0
-1448892198 source:c:\users\oli\documents\github\verklegt_namskeid\main.cpp
+1448916812 source:c:\users\oli\documents\github\verklegt_namskeid\main.cpp
+	"functions.h"
 	<iostream>
 	"Programmers.h"
 
-1448892198 c:\users\oli\documents\github\verklegt_namskeid\programmers.h
+1448915785 c:\users\oli\documents\github\verklegt_namskeid\programmers.h
 	<iostream>
 	<vector>
 
-1448892198 source:c:\users\oli\documents\github\verklegt_namskeid\programmers.cpp
+1448916528 source:c:\users\oli\documents\github\verklegt_namskeid\programmers.cpp
 	"Programmers.h"
 	<iostream>
 	<fstream>
+
+1448915845 c:\users\oli\documents\github\verklegt_namskeid\include\functions.h
+
+1448915845 source:c:\users\oli\documents\github\verklegt_namskeid\src\functions.cpp
+	"functions.h"
 
