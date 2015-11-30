@@ -1,6 +1,5 @@
 //#include <QCoreApplication>
-#include <fstream>
-#include <iostream>
+#include "Programmers.h"
 using namespace std;
 
 
@@ -9,8 +8,11 @@ int main()
   //stringset dataDoc;
   //readString(dataDoc, "data.txt");
 
-
-	cout << "Enter a name of one pioneer programmer" << endl;
+    // TODO búa til einhverja lykkju með aðgerðum
+	Programmers programmers;
+	programmers.add(programmers.read());
+    cout << "***** FIND ALL *********"<<endl;
+	programmers.findAll("s");
 
 
     return 0;
