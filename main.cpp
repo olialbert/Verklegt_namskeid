@@ -1,17 +1,20 @@
-#include <QCoreApplication>
-#include <fstream>
-#include <iostream>
-using namespace std;
 
+#include <iostream>
+#include "Programmers.h"
+using namespace std;
 
 
 int main()
 {
-cout << "SnÃ¦dÃ­s test " << endl;
-KÂ·ri er bestur
 
+  //stringset dataDoc;
+  //readString(dataDoc, "data.txt");
 
-
+    // TODO búa til einhverja lykkju með aðgerðum
+	Programmers programmers;
+	programmers.add(programmers.read());
+    cout << "***** FIND ALL *********"<<endl;
+	programmers.findAll("s");
     return 0;
 }
 

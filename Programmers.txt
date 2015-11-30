@@ -1,0 +1,4 @@
+Charles Babbage;M;26.12.1791;18.10.1871;
+Ada Lovelace;F;10.12.1815;27.11.1852;
+Alan Turing;M;23.06.1912;07.06.1954;
+Grace Murray Hopper;F;09.12.1906;01.011992;
