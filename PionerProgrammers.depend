@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1448892198 source:c:\users\oli\documents\github\verklegt_namskeid\main.cpp
+	<iostream>
+	"Programmers.h"
+
+1448892198 c:\users\oli\documents\github\verklegt_namskeid\programmers.h
+	<iostream>
+	<vector>
+
+1448892198 source:c:\users\oli\documents\github\verklegt_namskeid\programmers.cpp
+	"Programmers.h"
+	<iostream>
+	<fstream>
+
