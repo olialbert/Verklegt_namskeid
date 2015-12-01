@@ -98,21 +98,22 @@ int Programmers::size(){
     return programmers.size();
 }
 
-int Programmers::Find(string sSearch) {
+vector<Programmer> Programmers::Find(string sSearch) {
+    vector<Programmer> pr;
     for (int i=0; i<programmers.size();i++) {
         if (programmers[i].Name.find(sSearch) != string::npos ||  // string::npos ef sSearch finnst ekki
-            getProgrammer(i).BirthYear == sSearch ||
-            getProgrammer(i).DeadYear == sSearch)
-            return i;
-            //cout << programmers[i].Name << " - " << programmers[i].Gender << " - " << programmers[i].Birthday << endl;
+            getProgrammer(i).Gender == sSearch ||
+            getProgrammer(i).BirthYear == sSearch || getProgrammer(i).DeadYear == sSearch)
+            pr.push_back(getProgrammer(i));
     }
-    return -1;
+    return pr;
 }
+
 void Programmers::Display(string sSearch) {
     for (int i=0; i<programmers.size();i++) {
         if (programmers[i].Name.find(sSearch) != string::npos || // string::npos ef sSearch finnst ekki
-            getProgrammer(i).BirthYear == sSearch ||
-            getProgrammer(i).DeadYear == sSearch) {
+            getProgrammer(i).Gender == sSearch ||
+            getProgrammer(i).BirthYear == sSearch || getProgrammer(i).DeadYear == sSearch) {
             cout << getProgrammer(i).Name << " - " << getProgrammer(i).Gender << " - " << getProgrammer(i).BirthYear << " - " << getProgrammer(i).DeadYear << endl;
         }
     }

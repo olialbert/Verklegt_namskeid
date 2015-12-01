@@ -20,7 +20,7 @@ class Programmers
         void del(int nr);
         Programmer getProgrammer(int nr);
         int size();
-        int Find(string sSearch);
+        vector<Programmer> Find(string sSearch);
         void Display(string sSearch);
         void sortListByName();
         void sortListByGender();
