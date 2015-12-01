@@ -74,4 +74,5 @@ void ppInterface::sortProgrammers(int type){
     else{
         programmers.sortByName();    // default
     }
+    display("");
 }

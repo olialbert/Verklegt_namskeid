@@ -2,14 +2,10 @@
 #define PROGRAMMERS_H
 #include <iostream>
 #include <vector>
+#include "Programmer.h"
+
 using namespace std;
 
-struct Programmer {
-    string Name;
-    string Gender;
-    string BirthYear;
-    string DeadYear;
-};
 
 class Programmers
 {
