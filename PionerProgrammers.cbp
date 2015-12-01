@@ -36,15 +36,9 @@
 		</Compiler>
 		<Unit filename="Programmers.cpp" />
 		<Unit filename="Programmers.h" />
-<<<<<<< HEAD
-		<Unit filename="include/domain.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="src/domain.cpp" />
-=======
-		<Unit filename="include/functions.h" />
-		<Unit filename="main.cpp" />
-		<Unit filename="src/functions.cpp" />
->>>>>>> origin/master
+		<Unit filename="ppInterface.cpp" />
+		<Unit filename="ppInterface.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
