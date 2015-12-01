@@ -17,7 +17,7 @@ int main()
     cout << "3. Add to list" << endl;
     cout << "4. Remove from list" << endl;
     cout << "5. Sort list" << endl;
-    cout << "6. Quit" << endl;
+    cout << "6. Quit and save changes" << endl;
     cout << endl;
 
 
