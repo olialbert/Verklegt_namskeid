@@ -12,7 +12,7 @@ ppInterface::~ppInterface()
     //dtor
 }
 
-void ppInterface::search() {
+void ppInterface::search() { //Function that looks for a string in our .txt file
     string sSearch;
     cout << "Search for : ";
     cin >> sSearch;
@@ -20,9 +20,9 @@ void ppInterface::search() {
 }
 
 string fmt(string s, int len) {
-    return (s + "                        ").substr(0,len);
+    return (s + "                        ").substr(0,len); // Ekki viss hvað þetta gerir ???????????????
 }
-void ppInterface::display(string sSearch) {
+void ppInterface::display(string sSearch) { // displays the whole list of Computer Scientists that is in the .txt file
     vector<int> v;
     programmers.Find(v, sSearch);
     for (unsigned int i = 0; i<v.size();  i++) {
@@ -40,7 +40,7 @@ void ppInterface::display(string sSearch) {
     }
 }
 
-void ppInterface::readProgrammer() {
+void ppInterface::readProgrammer() {  //writes down the info about the new programmer that the user puts inn and adds it to the .txt file
 
     Programmer p;
 
@@ -58,21 +58,21 @@ void ppInterface::readProgrammer() {
 
     programmers.add(p);
 }
-void ppInterface::save(){
+void ppInterface::save(){ // saves the changes that have been made
     programmers.save();
 }
-void ppInterface::deleteProgrammer(){
+void ppInterface::deleteProgrammer(){ //function that Deletes the sentens wich has the number you type in
     int deleteNum;
     cout << "Delete programmer number? ";
     cin >> deleteNum;
     programmers.del(deleteNum);
 }
-void ppInterface::sortProgrammers(int type){
+void ppInterface::sortProgrammers(int type){ // Sorts the list of programmers by gender
     if(type==2){
         programmers.sortByGender();
     }
     else{
-        programmers.sortByName();    // default
+        programmers.sortByName();    // default  // Sorts the list of programmers by Name
     }
     display("");
 }
