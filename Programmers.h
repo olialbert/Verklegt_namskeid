@@ -20,10 +20,10 @@ class Programmers
         void del(int nr);
         Programmer getProgrammer(int nr);
         int size();
-        vector<Programmer> Find(string sSearch);
-        void Display(string sSearch);
-        void sortListByName();
-        void sortListByGender();
+        void Find(vector<int>& pr, string sSearch);
+     //  void Display(string sSearch);
+        void sortByName();
+        void sortByGender();
 
         void save();
     private:

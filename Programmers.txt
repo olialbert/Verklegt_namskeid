@@ -1,11 +1,11 @@
-Charles Babbage;M;26.12.1791;18.10.1871
-Ada Lovelace;F;10.12.1815;27.11.1852
-Alan Turing;M;23.06.1912;07.06.1954
-Grace Murray Hopper;F;09.12.1906;01.011992
-John Vincent Atanasoff;M;04.10.1903; 15.06.1995
-Douglas Carl Engelbart;M; 30.01.1925; 02.07.2013
-Alonzo Church;M;14.06.1903;11.08.1995
-Ernest Allen Emerson;M;02.06.1954;Still going strong
-Stephen Cole Kleene;M;05.01.1909;25.01.1994
-Emil Leon Post;M;11.02.1897;21.04.1954
-Ivan Edward Sutherland;M;16.05.1938;still going strong
+Charles Babbage;M;1791;1871
+Ada Lovelace;F;1815;1852
+Alan Turing;M;1912;1954
+Grace Murray Hopper;F;1906;1992
+John Vincent Atanasoff;M;1903;1995
+Douglas Carl Engelbart;M;1925;2013
+Alonzo Church;M;1903;1995
+Ernest Allen Emerson;M;1954;
+Stephen Cole Kleene;M;1909;1994
+Emil Leon Post;M;1897;1954
+Ivan Edward Sutherland;M;1938;

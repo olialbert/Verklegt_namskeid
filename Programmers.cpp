@@ -67,22 +67,6 @@ void Programmers::save() {
     }
     output.close();
 }
-void Programmers::read() {
-    Programmer p;
-    cout << "Name     : " ;
-    cin >> p.Name;
-
-    cout << "Gender   : " ;
-    cin >> p.Gender;
-
-    cout << "BirthYear : " ;
-    cin >> p.BirthYear;
-
-    cout << "Dead     : " ;
-    cin >> p.DeadYear;
-
-    add(p);
-}
 
 void Programmers::add(Programmer p) {
     programmers.push_back(p);
@@ -98,17 +82,17 @@ int Programmers::size(){
     return programmers.size();
 }
 
-vector<Programmer> Programmers::Find(string sSearch) {
-    vector<Programmer> pr;
+void Programmers::Find(vector<int>& pr, string sSearch) {
+    pr.clear();
     for (int i=0; i<programmers.size();i++) {
         if (programmers[i].Name.find(sSearch) != string::npos ||  // string::npos ef sSearch finnst ekki
             getProgrammer(i).Gender == sSearch ||
             getProgrammer(i).BirthYear == sSearch || getProgrammer(i).DeadYear == sSearch)
-            pr.push_back(getProgrammer(i));
+            pr.push_back(i);
     }
-    return pr;
+    //return pr;
 }
-
+/*
 void Programmers::Display(string sSearch) {
     for (int i=0; i<programmers.size();i++) {
         if (programmers[i].Name.find(sSearch) != string::npos || // string::npos ef sSearch finnst ekki
@@ -118,12 +102,12 @@ void Programmers::Display(string sSearch) {
         }
     }
 }
-
-void Programmers::sortListByName(){
+*/
+void Programmers::sortByName(){
     sort(programmers.begin(), programmers.end(), compare_name);
 }
-void Programmers::sortListByGender(){
-    sortListByName();
+void Programmers::sortByGender(){
+    sortByName();
     sort(programmers.begin(), programmers.end(), compare_gender);
 }
 

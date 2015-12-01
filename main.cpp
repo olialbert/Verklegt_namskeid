@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Programmers.h"
+#include "ppInterface.h"
 using namespace std;
 
 
@@ -11,11 +11,8 @@ int main()
     cout << "------------------------------------------------------------------------------" << endl;
     cout << "Pleas choose one of the following actions" << endl;
 
-
-    Programmers programmers;
-
-    int deleteNum = 0;
-    string sSearch = "";
+    ppInterface ppi;
+        string s;
     do{
         cout << endl;
         cout << "1. Display list " << endl;
@@ -29,54 +26,40 @@ int main()
         cout << endl;
         cout << "Choose action : ";
         cin >> choose;
+        getline(cin, s);
 
-        deleteNum = 0;
-        sSearch = "";
         switch (choose){
         case '1':
-            programmers.Display("");   //  Sýnir allan listan
+            ppi.display("");   //  Sýnir allan listan
             break;
         case '2':
           //  SearchList; // fall sem leifir notendanum að leita í lista
-            cout << "Search for : ";
-            cin >> sSearch;
-            programmers.Display(sSearch);
+            ppi.search();
             break;
         case '3':
-            programmers.read();
+            ppi.readProgrammer();
          //   AddToList; // fall sem leyfi notenandum að bæta við listan
             break;
         case '4':
-            cout << "Delete person number? ";
-            cin >> deleteNum;
-            programmers.del(deleteNum);
+           ppi.deleteProgrammer();
           //  RemoveFromList; // fall sem leyfir notendanum að fjarlægja úr listanum
             break;
         case '5':
          //   SortList by name; // fall sem leyfir notendanum að endurraða listanum í stafrófsröð
-            programmers.sortListByName();
+            ppi.sortProgrammers(1);
             break;
         case '6':
-            programmers.sortListByGender(); //  Sýnir allan listan raðaðan eftir kyni og stafrófsröð
+            ppi.sortProgrammers(2); //  Sýnir allan listan raðaðan eftir kyni og stafrófsröð
             break;
-
         case '7':
-            programmers.save();
+            ppi.save();
             break;
         default:
             if(choose != '8')
                 cout << "Invalid choice" << endl;
             break;
         }
-    } while(choose != 8);
-
-  //stringset dataDoc;
-  //readString(dataDoc, "data.txt");
-
-    // TODO búa til einhverja lykkju með aðgerðum
-
-
-
+    } while(choose != '8');
 
     return 0;
 }
