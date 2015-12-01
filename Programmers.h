@@ -11,22 +11,20 @@ class Programmers
 {
     public:
         Programmers();
+        Programmer getProgrammer(int nr);
+        int size();
         void read();
         void add(Programmer p);
         void del(int nr);
-        Programmer getProgrammer(int nr);
-        int size();
+
+        // returns the numbers of all programmers that matches the search criteria
         void Find(vector<int>& pr, string sSearch);
-     //  void Display(string sSearch);
         void sortByName();
         void sortByGender();
-
         void save();
     private:
         vector<Programmer> programmers;
         void load();
-        //bool compare_name (Programmer first, Programmer second);
-
 };
 
 #endif

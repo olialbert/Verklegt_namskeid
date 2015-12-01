@@ -3,6 +3,7 @@
 
 using namespace std;
 
+// stuct that contains information about programmer
 struct Programmer {
     string Name;
     string Gender;

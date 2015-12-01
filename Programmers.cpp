@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <algorithm>
 
-bool compare_name (Programmer first, Programmer second) // nocase
+bool compare_name (Programmer first, Programmer second) // takes first programmer and compares it with the second programmber based on their name.
 {
   unsigned int i=0;
   while ( (i<first.Name.length()) && (i<second.Name.length()) )
@@ -15,7 +15,7 @@ bool compare_name (Programmer first, Programmer second) // nocase
   }
   return ( first.Name.length() < second.Name.length() );
 }
-bool compare_gender(Programmer first, Programmer second) // nocase
+bool compare_gender(Programmer first, Programmer second) // takes first programmer and compares it with the second programmber based on their gender.
 {
   unsigned int i=0;
   while ( (i<first.Gender.length()) && (i<second.Gender.length()) )
@@ -27,12 +27,61 @@ bool compare_gender(Programmer first, Programmer second) // nocase
   return ( first.Gender.length() < second.Gender.length() );
 }
 
+
 Programmers::Programmers() {
     load();
 }
-// loads all scientists from text file
-// format name;gender;BirthYear
-void Programmers::load() {
+
+Programmer Programmers::getProgrammer(int nr) {
+    return programmers[nr];
+}
+
+int Programmers::size(){
+    return programmers.size();
+}
+
+void Programmers::add(Programmer p) {
+    programmers.push_back(p);
+}
+
+void Programmers::del(int nr) {
+    programmers.erase(programmers.begin()+(nr-1));
+}
+
+void Programmers::Find(vector<int>& pr, string sSearch) {
+    pr.clear();
+    for (unsigned int i=0; i<programmers.size();i++) {
+        if (programmers[i].Name.find(sSearch) != string::npos ||  // string::npos if it does not find sSearch
+            getProgrammer(i).Gender == sSearch ||
+            getProgrammer(i).BirthYear == sSearch || getProgrammer(i).DeadYear == sSearch)
+            pr.push_back(i);
+    }
+}
+
+void Programmers::sortByName(){
+    sort(programmers.begin(), programmers.end(), compare_name);
+}
+
+void Programmers::sortByGender(){
+    sortByName();
+    sort(programmers.begin(), programmers.end(), compare_gender);
+}
+
+void Programmers::save() {        // saves all programmers to file
+   ofstream output;
+   output.open("Programmers.txt");
+     if(output.fail()){
+        cout << "error" << endl;
+        return;
+    }
+    for (int i=0; i<size();i++) {
+        output << getProgrammer(i).Name << ";" <<  getProgrammer(i).Gender << ";" <<  getProgrammer(i).BirthYear << ";" <<  getProgrammer(i).DeadYear << ";" << endl;
+    }
+    output.close();
+}
+
+
+void Programmers::load() {             // loads all programmers from text file
     ifstream pFile;
     pFile.open("Programmers.txt");
     if(pFile.fail()){
@@ -55,59 +104,3 @@ void Programmers::load() {
     }
     pFile.close();
 }
-void Programmers::save() {
-   ofstream output;
-   output.open("Programmers.txt");
-     if(output.fail()){
-        cout << "error" << endl;
-        return;
-    }
-    for (unsigned int i=0; i<size();i++) {
-        output << getProgrammer(i).Name << ";" <<  getProgrammer(i).Gender << ";" <<  getProgrammer(i).BirthYear << ";" <<  getProgrammer(i).DeadYear << ";" << endl;
-    }
-    output.close();
-}
-
-void Programmers::add(Programmer p) {
-    programmers.push_back(p);
-}
-
-void Programmers::del(int nr) {
-    programmers.erase(programmers.begin()+(nr-1));
-}
-Programmer Programmers::getProgrammer(int nr) {
-    return programmers[nr];
-}
-int Programmers::size(){
-    return programmers.size();
-}
-
-void Programmers::Find(vector<int>& pr, string sSearch) {
-    pr.clear();
-    for (int i=0; i<programmers.size();i++) {
-        if (programmers[i].Name.find(sSearch) != string::npos ||  // string::npos ef sSearch finnst ekki
-            getProgrammer(i).Gender == sSearch ||
-            getProgrammer(i).BirthYear == sSearch || getProgrammer(i).DeadYear == sSearch)
-            pr.push_back(i);
-    }
-    //return pr;
-}
-/*
-void Programmers::Display(string sSearch) {
-    for (int i=0; i<programmers.size();i++) {
-        if (programmers[i].Name.find(sSearch) != string::npos || // string::npos ef sSearch finnst ekki
-            getProgrammer(i).Gender == sSearch ||
-            getProgrammer(i).BirthYear == sSearch || getProgrammer(i).DeadYear == sSearch) {
-            cout << getProgrammer(i).Name << " - " << getProgrammer(i).Gender << " - " << getProgrammer(i).BirthYear << " - " << getProgrammer(i).DeadYear << endl;
-        }
-    }
-}
-*/
-void Programmers::sortByName(){
-    sort(programmers.begin(), programmers.end(), compare_name);
-}
-void Programmers::sortByGender(){
-    sortByName();
-    sort(programmers.begin(), programmers.end(), compare_gender);
-}
-

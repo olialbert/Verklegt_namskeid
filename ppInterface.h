@@ -7,14 +7,12 @@ class ppInterface
 {
     public:
         ppInterface();
-        virtual ~ppInterface();
         void search();
         void display(string sSearch);
-        void readProgrammer();
+        void addProgrammer();
         void save();
         void deleteProgrammer();
         void sortProgrammers(int type);
-    protected:
     private:
         Programmers programmers;
 };

@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    char choose; // breyta fyrir val á aðgerð
+    char choose;  // breyta fyrir val á aðgerð
 
     cout << "This is a program that contains information about famous computer scientists" << endl; //texti sem útsýkrir hvað forritið gerir
     cout << "------------------------------------------------------------------------------" << endl;
@@ -29,29 +29,25 @@ int main()
         getline(cin, s);
 
         switch (choose){
-        case '1':
-            ppi.display("");   //  Sýnir allan listan
+        case '1':                      //  Sýnir allan listannn
+            ppi.display("");
             break;
-        case '2':
-          //  SearchList; // fall sem leifir notendanum að leita í lista
+        case '2':                      //leita í lista
             ppi.search();
             break;
         case '3':
-            ppi.readProgrammer();
-         //   AddToList; // fall sem leyfi notenandum að bæta við listan
+            ppi.addProgrammer();       //bætir við listann
             break;
         case '4':
-           ppi.deleteProgrammer();
-          //  RemoveFromList; // fall sem leyfir notendanum að fjarlægja úr listanum
+           ppi.deleteProgrammer();     //fjarlægir úr listanum
             break;
-        case '5':
-         //   SortList by name; // fall sem leyfir notendanum að endurraða listanum í stafrófsröð
+        case '5':                      // raðar listanum í stafrófsröð
             ppi.sortProgrammers(1);
             break;
-        case '6':
-            ppi.sortProgrammers(2); //  Sýnir allan listan raðaðan eftir kyni og stafrófsröð
+        case '6':                      //  Sýnir allan listan raðaðan eftir kyni og stafrófsröð
+            ppi.sortProgrammers(2);
             break;
-        case '7':
+        case '7':                      //vistar breytingar í skrána.
             ppi.save();
             break;
         default:

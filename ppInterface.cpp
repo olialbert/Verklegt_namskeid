@@ -7,11 +7,6 @@ ppInterface::ppInterface()
 
 }
 
-ppInterface::~ppInterface()
-{
-    //dtor
-}
-
 void ppInterface::search() {
     string sSearch;
     cout << "Search for : ";
@@ -32,15 +27,11 @@ void ppInterface::display(string sSearch) {
                    programmers.getProgrammer(v[i]).Gender.c_str(),
                     programmers.getProgrammer(v[i]).BirthYear.c_str(),
                     programmers.getProgrammer(v[i]).DeadYear .c_str());
-            /*cout << (i+1) << " : " <<
-                    programmers.getProgrammer(v[i]).Name << " - " <<
-                    programmers.getProgrammer(v[i]).Gender << " - " <<
-                    programmers.getProgrammer(v[i]).BirthYear << " - " <<
-                    programmers.getProgrammer(v[i]).DeadYear << endl;*/
+
     }
 }
 
-void ppInterface::readProgrammer() {
+void ppInterface::addProgrammer() {
 
     Programmer p;
 

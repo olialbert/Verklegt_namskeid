@@ -13,5 +13,6 @@ SOURCES += main.cpp \
 
 HEADERS += \
     programmers.h \
+    programmer.h \
     ppinterface.h
 
