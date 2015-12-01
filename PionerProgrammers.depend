@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1448991222 source:c:\users\oli\documents\github\verklegt_namskeid\main.cpp
+	<iostream>
+	"ppInterface.h"
+
+1448991222 c:\users\oli\documents\github\verklegt_namskeid\ppinterface.h
+	"Programmers.h"
+
+1448996663 c:\users\oli\documents\github\verklegt_namskeid\programmers.h
+	<iostream>
+	<vector>
+	"Programmer.h"
+
+1448991222 c:\users\oli\documents\github\verklegt_namskeid\programmer.h
+
+1448991222 source:c:\users\oli\documents\github\verklegt_namskeid\ppinterface.cpp
+	"ppInterface.h"
+	<stdio.h>
+	<string>
+
+1448991222 source:c:\users\oli\documents\github\verklegt_namskeid\programmers.cpp
+	"Programmers.h"
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<algorithm>
+
