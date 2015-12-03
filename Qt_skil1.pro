@@ -9,10 +9,12 @@ TEMPLATE = app
 
 SOURCES += main.cpp \
     programmers.cpp \
-    ppinterface.cpp
+    ppinterface.cpp \
+    data.cpp \
+    programmer.cpp
 
 HEADERS += \
     programmers.h \
     programmer.h \
-    ppinterface.h
-
+    ppinterface.h \
+    data.h 

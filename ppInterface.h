@@ -8,6 +8,10 @@ class ppInterface
     public:
         ppInterface();
 
+        int start();
+
+    private:
+
           // ask user for search string and displayes all programmers that are in the search criteria
         void search();
 
@@ -29,7 +33,7 @@ class ppInterface
           //          else sorts by name
           // sorts the programmer list in given order
         void sortProgrammers(int type);
-    private:
+
         Programmers programmers;
 };
 

@@ -1,20 +1,20 @@
-#ifndef PROGRAMMERS_H
-#define PROGRAMMERS_H
+#ifndef DATA_H
+#define DATA_H
 #include <iostream>
 #include <vector>
 #include "Programmer.h"
-#include "data.h"
+
 using namespace std;
 
 
-class Programmers
+class Data
 {
     public:
-        Programmers();
+        Data();
 
           // input : nr - nr of the programmer
           // returns : programmer at position nr
-        Programmer getProgrammer(int nr);
+        Programmer get(int nr);
 
           // returns : count of programmers
         int size();
@@ -26,11 +26,6 @@ class Programmers
           // programmer at nr has been deleted from the programmers list
         void del(int nr);
 
-          // input : v - vector<int>
-          //         sSearch - search criteria
-          // v includes nr of all programmers that fullfill the search criteria
-        void Find(vector<int>& pr, string sSearch);
-
           // sorts the programmers by name
         void sortByName();
 
@@ -40,7 +35,8 @@ class Programmers
           // saves the programmers to disk
         void save();
     private:
-        Data data;
+        vector<Programmer> programmers;
+        void load();
 };
 
 #endif
