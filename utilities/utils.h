@@ -17,7 +17,7 @@ namespace utils {
 
     int stringToInt(string str);
 
-    string stringToLower(string str);
+    string stringToLower(string str); //stolen
 
     string intToString(int number);
 

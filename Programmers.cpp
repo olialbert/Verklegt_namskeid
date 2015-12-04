@@ -32,7 +32,8 @@ void Programmers::Find(vector<int>& pr, string sSearch) {
     for (int i=0; i<data.size();i++) {
         if (stringToLower(data.get(i).Name).find(stringToLower(sSearch)) != string::npos ||
             data.get(i).Gender == sSearch[0] ||
-            data.get(i).BirthYear == stringToInt(sSearch) || data.get(i).DeadYear == stringToInt(sSearch))
+            data.get(i).BirthYear == stringToInt(sSearch) ||
+            data.get(i).DeadYear == stringToInt(sSearch))
             pr.push_back(i);
     }
 }

@@ -14,7 +14,7 @@ ppInterface::ppInterface()
 int ppInterface::start() {
     char choose;  // breyta fyrir val á aðgerð
 
-    cout << "This is a program that contains information about famous computer scientists" << endl; //texti sem útsýkrir hvað forritið gerir
+    cout << "lalalalalalaThis is a program that contains information about famous computer scientists" << endl; //texti sem útsýkrir hvað forritið gerir
     cout << "------------------------------------------------------------------------------" << endl;
     cout << "Pleas choose one of the following actions" << endl;
 
