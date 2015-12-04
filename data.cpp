@@ -13,9 +13,9 @@
 #include <stdio.h>
 #include <string>
 
-
 using namespace constants;
 using namespace utils;
+
 
 Data::Data() {
     mydb = QSqlDatabase::addDatabase("QSQLITE");
@@ -25,6 +25,8 @@ Data::Data() {
 
     loadDB("name");
 }
+
+
 Data::~Data() {
     mydb.close();
 }

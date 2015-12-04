@@ -1,6 +1,8 @@
 QT += core
 QT += sql
 QT -= gui
+QT += core sql
+
 
 TARGET = Qt_skil1
 CONFIG += console

@@ -10,3 +10,17 @@ Stephen Cole Kleene;m;1909;1994;
 Emil Leon Post;m;1897;1954;
 Ivan Edward Sutherland;m;1938;0;
 Kristin Sif V;f;1194;2015;
+
+
+Konrad Zuse, M, 1910, 1995
+‘Tommy Flowers’, ‘M’, 1905, 1998
+‘Edson deCastro’, ‘M’, 1938, 1999
+‘Boris Babaian’, ‘M’, 1933, 0
+‘Steve Wozniak’,’M’, 1950, 0
+‘Steve Jobs’, ‘M’, 1955, 0
+‘Charles Ranlett Flint’, ‘M’, 1850, 1934
+‘J. Presper Eckert’, ‘M’, 1919, 1995
+‘John Mauchly’, ‘M’, 1907, 1980
+‘Freddie Williams’, ‘M’, 1911, 1977
+‘Tom Kilburn’, ‘M’, 1921, 2001
+‘Clive Sinclair’, ‘M’, 1940, 0
