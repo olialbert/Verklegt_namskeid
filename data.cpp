@@ -24,6 +24,7 @@ Data::Data() {
     mydb.open();
 
     loadDB("name");
+    mydb.close();
 }
 
 
@@ -116,4 +117,5 @@ void Data::loadDB(string sort){
 
             programmers.push_back(p);
         }
+
 }

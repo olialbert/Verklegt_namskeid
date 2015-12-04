@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-    QSqlDatabase db;
+  /*  QSqlDatabase db;
     db = QSqlDatabase::addDatabase("QSQLITE");
     QString dbName = "computers_db.sqlite";
     QString dbProgrammers = "programmers_db.sqlite";
@@ -15,7 +15,7 @@ int main()
     db.setDatabaseName(dbProgrammers);
 
     db.open();
-    QSqlQuery query(db);
+    QSqlQuery query(db);  */
 
     ppInterface ppi;
 
