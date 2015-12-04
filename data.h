@@ -2,6 +2,7 @@
 #define DATA_H
 #include <iostream>
 #include <vector>
+#include <QtSql/QSqlDatabase>
 #include "Programmer.h"
 
 using namespace std;
@@ -11,7 +12,7 @@ class Data
 {
     public:
         Data();
-
+        ~Data();
           // input : nr - nr of the programmer
           // returns : programmer at position nr
         Programmer get(int nr);
@@ -35,8 +36,10 @@ class Data
           // saves the programmers to disk
         void save();
     private:
+        QSqlDatabase mydb;
         vector<Programmer> programmers;
         void load();
+        void loadDB(string sort);
 };
 
 #endif

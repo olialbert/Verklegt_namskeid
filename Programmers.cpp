@@ -1,9 +1,11 @@
 #include "Programmers.h"
+#include "utilities/utils.h"
 #include <iostream>
 #include <fstream>
 #include <stdlib.h>
 #include <algorithm>
 
+using namespace utils;
 
 Programmers::Programmers() {
 
@@ -28,9 +30,9 @@ void Programmers::del(int nr) {
 void Programmers::Find(vector<int>& pr, string sSearch) {
     pr.clear();
     for (int i=0; i<data.size();i++) {
-        if (data.get(i).Name.find(sSearch) != string::npos ||  // string::npos if it does not find sSearch
-            data.get(i).Gender == sSearch ||
-            ""+data.get(i).BirthYear == sSearch || ""+data.get(i).DeadYear == sSearch)
+        if (stringToLower(data.get(i).Name).find(stringToLower(sSearch)) != string::npos ||
+            data.get(i).Gender == sSearch[0] ||
+            data.get(i).BirthYear == stringToInt(sSearch) || data.get(i).DeadYear == stringToInt(sSearch))
             pr.push_back(i);
     }
 }
@@ -44,6 +46,6 @@ void Programmers::sortByGender(){
     data.sortByGender();
 }
 
-void Programmers::save() {        // saves all programmers to file
+void Programmers::save() {
     data.save();
 }

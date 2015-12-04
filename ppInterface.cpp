@@ -1,6 +1,10 @@
 #include "ppInterface.h"
+#include "utilities/utils.h"
 #include <stdio.h>
 #include <string>
+
+using namespace utils;
+using namespace std;
 
 ppInterface::ppInterface()
 {
@@ -76,12 +80,12 @@ void ppInterface::display(string sSearch) {
     vector<int> v;
     programmers.Find(v, sSearch);
     for (unsigned int i = 0; i<v.size();  i++) {
-            printf("%-2i : %-40s - %-1s - %-4s - %-4s\n",
+            printf("%-2i : %-40s - %-8s - %-4s - %-4s\n",
                    (i+1),
                    programmers.getProgrammer(v[i]).Name.c_str(),
-                   programmers.getProgrammer(v[i]).Gender.c_str(),
-                    programmers.getProgrammer(v[i]).BirthYear.c_str(),
-                    programmers.getProgrammer(v[i]).DeadYear .c_str());
+                   genderToString(programmers.getProgrammer(v[i]).Gender).c_str(),
+                   intToString(programmers.getProgrammer(v[i]).BirthYear).c_str(),
+                   intToString(programmers.getProgrammer(v[i]).DeadYear).c_str());
 
     }
 }
@@ -93,14 +97,20 @@ void ppInterface::addProgrammer() {
     cout << "Name     : " ;
     getline(cin, p.Name);
 
+    string g;
     cout << "Gender   : " ;
-    getline(cin, p.Gender);
+    getline(cin, g);
+    p.Gender = stringToGender(g);
 
     cout << "BirthYear : " ;
-    getline(cin, p.BirthYear);
+    string b;
+    getline(cin, b);
+    p.BirthYear = stringToInt(b);
 
     cout << "Dead     : " ;
-    getline(cin, p.DeadYear);
+    string d;
+    getline(cin, d);
+    p.DeadYear = stringToInt(d);
 
     programmers.add(p);
 }

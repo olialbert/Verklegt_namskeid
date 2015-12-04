@@ -1,11 +1,12 @@
-Charles Babbage;M;1791;1871
-Ada Lovelace;F;1815;1852
-Alan Turing;M;1912;1954
-Grace Murray Hopper;F;1906;1992
-John Vincent Atanasoff;M;1903;1995
-Douglas Carl Engelbart;M;1925;2013
-Alonzo Church;M;1903;1995
-Ernest Allen Emerson;M;1954;
-Stephen Cole Kleene;M;1909;1994
-Emil Leon Post;M;1897;1954
-Ivan Edward Sutherland;M;1938;
+Charles Babbage;m;1791;1871;
+Ada Lovelace;f;1815;1852;
+Alan Turing;m;1912;1954;
+Grace Murray Hopper;f;1906;1992;
+John Vincent Atanasoff;m;1903;1995;
+Douglas Carl Engelbart;m;1925;2013;
+Alonzo Church;m;1903;1995;
+Ernest Allen Emerson;m;1954;0;
+Stephen Cole Kleene;m;1909;1994;
+Emil Leon Post;m;1897;1954;
+Ivan Edward Sutherland;m;1938;0;
+Kristin Sif V;f;1194;2015;
