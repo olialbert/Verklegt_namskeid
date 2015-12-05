@@ -4,6 +4,7 @@
 #include <vector>
 #include <QtSql/QSqlDatabase>
 #include "Programmer.h"
+#include "computer.h"
 
 using namespace std;
 
@@ -13,32 +14,49 @@ class Data
     public:
         Data();
         ~Data();
-          // input : nr - nr of the programmer
-          // returns : programmer at position nr
-        Programmer get(int nr);
 
-          // returns : count of programmers
-        int size();
+        // ********* PROGRAMMERS *************************************************************************
 
-          // input : p - programmer to be added
-          // programmer p as been added to the programmers list
-        void add(Programmer p);
+             // input : programmerId - id of the programmer
+            // returns : programmer with id programmerId
+        Programmer getProgrammer(int programmerId);
+        vector<Programmer> findProgrammers(string search);
+        vector<Programmer> getProgrammers(int computerId);
 
-          // programmer at nr has been deleted from the programmers list
-        void del(int nr);
+            // input : p - programmer to be added
+            // programmer p as been added to the programmers table
+        void addProgrammer(Programmer p);
 
-          // sorts the programmers by name
-        void sortByName();
+            // input : programmerId - Id of the programmer to be deleted
+            // programmer with Id, programerId has been deleted from the programmers table
+        void delProgrammer(int programmerId);
 
-          // sorts the programmers by gender+name
-        void sortByGender();
+             // input : order - sort order
+            // sets the display order for the selected programmers
+        void orderProgrammersBy(string order);
 
-          // saves the programmers to disk
-        void save();
+        // ********* COMPUTERS *************************************************************************
+
+        Computer getComputer(int id);
+        vector<Computer> findComputer(string search);
+        vector<Computer> getComputers(int programmerID);
+
+            // input : c - computer to be added
+            // computer c as been added to the computers table
+        void addComputer(Computer p);
+
+            // input : computerId - Id of the computer to be deleted
+            // computer with Id, computerId has been deleted from the computers table
+        void delComputer(int computerId);
+
+            // input : order - sort order
+            // sets the display order for the selected computers
+        void orderComputersBy(string order);
+
     private:
         QSqlDatabase mydb;
-        vector<Programmer> programmers;
-        void load();
+        string programmersOrderBy = "ID";
+        string computersOrderBy = "ID";
         void loadDB(string sort);
 };
 

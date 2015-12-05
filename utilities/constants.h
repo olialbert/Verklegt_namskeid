@@ -9,11 +9,11 @@
  */
 
 namespace constants {
-    const string DATA_FILE_NAME = "database.txt";
+
     const string DATABASE_FILE_NAME = "database.db";
 
-    const string COLUMN_NAME    = "name";
-    const string COLUMN_GENDER  = "gender";
+    const string PROGRAMMERS_ORDER_NAME   = "Name";
+    const string PROGRAMMERS_ORDER_GENDER = "Gender, Name";
 }
 
 #endif // CONSTANTS_H

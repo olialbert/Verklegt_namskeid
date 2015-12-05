@@ -10,7 +10,7 @@ using namespace utils;
 Programmers::Programmers() {
 
 }
-
+/*
 Programmer Programmers::getProgrammer(int nr) {
     return data.get(nr);
 }
@@ -50,3 +50,4 @@ void Programmers::sortByGender(){
 void Programmers::save() {
     data.save();
 }
+*/

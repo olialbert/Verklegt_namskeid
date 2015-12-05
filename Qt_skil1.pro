@@ -26,4 +26,4 @@ HEADERS += \
     utilities/constants.h \
     utilities/scientistcomparator.h \
     utilities/utils.h \
-    computers.h
+    computer.h

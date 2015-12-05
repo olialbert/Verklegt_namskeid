@@ -4,11 +4,11 @@
 using namespace std;
 
 // stuct that contains information about programmer
-struct Computers {
+struct Computer {
     string Name;
-    int YearBuilt;
     string Type;
     bool WasItBuilt;
+    int YearBuilt;
 };
 
 
