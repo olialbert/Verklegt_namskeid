@@ -1,10 +1,13 @@
 #include "ppInterface.h"
 #include "utilities/utils.h"
+#include "constants.h"
 #include <stdio.h>
 #include <string>
 
 using namespace utils;
 using namespace std;
+using namespace constants;
+
 
 ppInterface::ppInterface()
 {
@@ -21,7 +24,7 @@ int ppInterface::start() {
     string s;
     do{
         cout << endl;
-        cout << "1. Display list " << endl;
+        cout << "1. Display Programmers " << endl;
         cout << "2. Search list" << endl;
         cout << "3. Add to list" << endl;
         cout << "4. Remove from list" << endl;
@@ -36,7 +39,7 @@ int ppInterface::start() {
 
         switch (choose){
         case '1':                      //  Sýnir allan listannn
-            display("");
+            displayProgrammers("");
             break;
         case '2':                      //leita í lista
             search();
@@ -66,6 +69,39 @@ int ppInterface::start() {
     return 0;
 }
 
+void ppInterface::sortProgrammers() {
+    char choose;  // breyta fyrir val á aðgerð
+
+    string s;
+    do{
+        cout << endl;
+        cout << "Sort by :" << endl;
+        cout << "1. Name" << endl;
+        cout << "2. Name desc" << endl;
+        cout << "3. Gender" << endl;
+        cout << "4. Gender desc" << endl;
+        cout << endl;
+        cout << "Choose Programmers sorting : ";
+        cin >> choose;
+        getline(cin, s);
+
+        switch (choose){
+        case '1':
+            programmers.orderProgrammerBy(PROGRAMMERS_ORDER_NAME);
+            break;
+        case '2':
+            programmers.orderProgrammerBy(PROGRAMMERS_ORDER_NAME_DESC);
+            break;
+        case '3':
+            programmers.orderProgrammerBy(PROGRAMMERS_ORDER_GENDER);
+            break;
+        case '4':
+            programmers.orderProgrammerBy(PROGRAMMERS_ORDER_GENDER_DESC);
+            break;
+        }
+    } while(choose != '1' && choose != '2' && choose != '3' && choose != '4');
+}
+
 void ppInterface::search() {
     string sSearch;
     cout << "Search for : ";
@@ -82,16 +118,9 @@ void ppInterface::displayProgrammers(string sSearch) {
             printf("%-2i : %-40s - %-8s - %-4s - %-4s\n",
                    (i+1),
                    programmers.getProgrammer(v[i]).Name.c_str(),
-<<<<<<< Updated upstream
                    genderToString(programmers.getProgrammer(v[i]).Gender).c_str(),
                    intToString(programmers.getProgrammer(v[i]).BirthYear).c_str(),
                    intToString(programmers.getProgrammer(v[i]).DeadYear).c_str());
-=======
-                   programmers.getProgrammer(v[i]).Gender.c_str(),
-                    programmers.getProgrammer(v[i]).BirthYear.c_str(),
-                    programmers.getProgrammer(v[i]).DeadYear .c_str());
-
->>>>>>> Stashed changes
     }
 }
 

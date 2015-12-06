@@ -23,7 +23,6 @@ HEADERS += \
     ppinterface.h \
     data.h \ 
     utilities/constants.h \
-    utilities/scientistcomparator.h \
-    utilities/utils.h \
     computer.h \
+    utilities/utils.h \
     programmers.h

@@ -110,9 +110,9 @@ void delProgrammer(int programmerId){
     query.exec(sql.c_str());
 }
 
-void updateProgrammer(int programmerId){
+void updateProgrammer(Programmer p){
     QSqlQuery query;
-    string sql = "UPDATE Customers SET Name ='Ada Lovelace', Gender = 'Female', BirthYear = '', DeadYear = ''  WHERE ProgrammerID='2';"
+    string sql = "UPDATE Customers SET Name ='Ada Lovelace', Gender = 'Female', BirthYear = '', DeadYear = ''  WHERE ProgrammerID=" + p.
     query.exec(sql.c_str());
 }
 

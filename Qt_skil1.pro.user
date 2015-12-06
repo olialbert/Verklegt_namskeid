@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<<<<<<< Updated upstream:Qt_skil1.pro.user
-<!-- Written by QtCreator 3.5.1, 2015-12-05T00:36:05. -->
-=======
-<!-- Written by QtCreator 3.5.1, 2015-12-01T21:23:26. -->
->>>>>>> Stashed changes:skil1_prufa/Qt_skil1/Qt_skil1.pro.user
+<!-- Written by QtCreator 3.5.1, 2015-12-06T19:10:51. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -231,13 +227,8 @@
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Qt_skil1</value>
-<<<<<<< Updated upstream:Qt_skil1.pro.user
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/krist/Documents/GitHub/Verklegt_namskeid/Qt_skil1.pro</value>
-=======
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Qt_skil12</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/krist/Documents/GitHub/Verklegt_namskeid/skil1_prufa/Qt_skil1/Qt_skil1.pro</value>
->>>>>>> Stashed changes:skil1_prufa/Qt_skil1/Qt_skil1.pro.user
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.CommandLineArguments"></value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.ProFile">Qt_skil1.pro</value>
     <value type="bool" key="Qt4ProjectManager.Qt4RunConfiguration.UseDyldImageSuffix">false</value>
