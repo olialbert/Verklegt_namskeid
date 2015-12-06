@@ -18,15 +18,15 @@ class Programmers
 
           // input : p - programmer to be added
           // programmer p as been added to the programmers list
-        void add(Programmer p);
+        void addProgrammer(Programmer p);
 
           // programmer at nr has been deleted from the programmers list
-        void del(int nr);
+        void delProgrammer(int programmerId);
 
           // input : v - vector<int>
           //         sSearch - search criteria
           // v includes nr of all programmers that fullfill the search criteria
-        void Find(vector<int>& pr, string sSearch);
+        vector<Programmer> findProgrammers(string search);
 
           // sorts the programmers by name
 
