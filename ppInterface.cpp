@@ -76,17 +76,15 @@ void ppInterface::search() {
 string fmt(string s, int len) {
     return (s + "                        ").substr(0,len);
 }
-void ppInterface::display(string sSearch) {
-    vector<int> v;
-    programmers.Find(v, sSearch);
-    for (unsigned int i = 0; i<v.size();  i++) {
+void ppInterface::displayProgrammers(string sSearch) {
+    vector<Programmer> programmers = domain.findProgrammers;
+     for (unsigned int i = 0; i<v.size();  i++) {
             printf("%-2i : %-40s - %-8s - %-4s - %-4s\n",
                    (i+1),
                    programmers.getProgrammer(v[i]).Name.c_str(),
                    genderToString(programmers.getProgrammer(v[i]).Gender).c_str(),
                    intToString(programmers.getProgrammer(v[i]).BirthYear).c_str(),
                    intToString(programmers.getProgrammer(v[i]).DeadYear).c_str());
-
     }
 }
 

@@ -11,19 +11,19 @@ CONFIG -= app_bundle
 TEMPLATE = app
 
 SOURCES += main.cpp \
-    programmers.cpp \
     ppinterface.cpp \
     data.cpp \
     programmer.cpp \
     utilities/scientistcomparator.cpp \
-    utilities/utils.cpp
+    utilities/utils.cpp \
+    programmers.cpp
 
 HEADERS += \
-    programmers.h \
     programmer.h \
     ppinterface.h \
     data.h \ 
     utilities/constants.h \
     utilities/scientistcomparator.h \
     utilities/utils.h \
-    computer.h
+    computer.h \
+    programmers.h

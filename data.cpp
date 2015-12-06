@@ -44,6 +44,7 @@ Programmer getProgrammer(int programmerId){
     query.exec(sql.c_str());
     Programmer p;
 
+
     if(query.next())
     {
         p.Name = query.value("Name").toString().toStdString();
@@ -84,6 +85,7 @@ vector<Programmer> getProgrammers(int computerId){
     Programmer p;
     while(query.next())
     {
+        p.ProgrammerID =  stringToInt(query.value("ProgrammerID").toString().toStdString());          
         p.Name = query.value("Name").toString().toStdString();
         p.Gender = stringToGender(query.value("Gender").toString().toStdString());
         p.BirthYear = stringToInt(query.value("BirthYear").toString().toStdString());
@@ -103,7 +105,15 @@ void addProgrammer(Programmer p){
 }
 
 void delProgrammer(int programmerId){
+    QSqlQuery query;
+    string sql = "DELETE FROM Programmer WHERE ProgrammerID=" +programmerId;
+    query.exec(sql.c_str());
+}
 
+void updateProgrammer(int programmerId){
+    QSqlQuery query;
+    string sql = "UPDATE Customers SET Name ='Ada Lovelace', Gender = 'Female', BirthYear = '', DeadYear = ''  WHERE ProgrammerID='2';"
+    query.exec(sql.c_str());
 }
 
 void orderProgrammersBy(string order){
@@ -133,7 +143,6 @@ void orderComputersBy(string order);
 void Data::del(int nr) {
     programmers.erase(programmers.begin()+(nr-1));
 }
-
 
 void Data::loadDB(string sort){
         QSqlQuery query;
