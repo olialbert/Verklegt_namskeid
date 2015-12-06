@@ -11,6 +11,7 @@ class Programmers
 {
     public:
         Programmers();
+<<<<<<< Updated upstream
 
           // input : nr - nr of the programmer
           // returns : programmer at position nr
@@ -32,15 +33,32 @@ class Programmers
         void Find(vector<int>& pr, string sSearch);
 
           // sorts the programmers by name
+=======
+        Programmer getProgrammer(int nr);
+        int size();
+        void read();
+        void add(Programmer p);
+        void del(int nr);
+
+        // returns the numbers of all programmers that matches the search criteria
+        void Find(vector<int>& pr, string sSearch);
+>>>>>>> Stashed changes
         void sortByName();
 
           // sorts the programmers by gender+name
         void sortByGender();
+<<<<<<< Updated upstream
 
           // saves the programmers to disk
         void save();
     private:
         Data data;
+=======
+        void save();
+    private:
+        vector<Programmer> programmers;
+        void load();
+>>>>>>> Stashed changes
 };
 
 #endif

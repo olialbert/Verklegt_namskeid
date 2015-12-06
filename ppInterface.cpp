@@ -82,9 +82,16 @@ void ppInterface::displayProgrammers(string sSearch) {
             printf("%-2i : %-40s - %-8s - %-4s - %-4s\n",
                    (i+1),
                    programmers.getProgrammer(v[i]).Name.c_str(),
+<<<<<<< Updated upstream
                    genderToString(programmers.getProgrammer(v[i]).Gender).c_str(),
                    intToString(programmers.getProgrammer(v[i]).BirthYear).c_str(),
                    intToString(programmers.getProgrammer(v[i]).DeadYear).c_str());
+=======
+                   programmers.getProgrammer(v[i]).Gender.c_str(),
+                    programmers.getProgrammer(v[i]).BirthYear.c_str(),
+                    programmers.getProgrammer(v[i]).DeadYear .c_str());
+
+>>>>>>> Stashed changes
     }
 }
 
