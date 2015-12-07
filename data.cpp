@@ -65,8 +65,6 @@ vector<Programmer> Data::findProgrammers(string search){
         sql+= string (" or birthyear =")+ search+ string(" or deadyear =") +search+ string(" ");
     sql +=  string(" order by ") +programmersOrderBy;
 
-    cout << sql << endl; // TODO remove
-
     query.exec(sql.c_str());
     Programmer p;
     while(query.next())
@@ -106,14 +104,12 @@ vector<Programmer> Data::getProgrammers(int computerId){
 void Data::addProgrammer(Programmer p){
     QSqlQuery query;
     string sql = string("insert into Programmers(name, gender, birthyear, deadyear) values('")+p.Name+string("','")+p.Gender+string("',")+intToString(p.BirthYear)+string(",")+intToString(p.DeadYear)+string(")");
-       cout << sql << endl; // TODO remove
     query.exec(sql.c_str());
 }
 
 void Data::deleteProgrammer(int programmerID){
     QSqlQuery query;
     string sql = string("DELETE FROM Programmers WHERE ProgrammerID=") +intToString(programmerID);
-    cout << sql << endl; // TODO remove
     query.exec(sql.c_str());
 }
 
