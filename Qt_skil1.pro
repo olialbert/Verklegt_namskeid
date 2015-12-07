@@ -13,7 +13,6 @@ TEMPLATE = app
 SOURCES += main.cpp \
     ppinterface.cpp \
     data.cpp \
-    programmer.cpp \
     utilities/utils.cpp \
     pcservice.cpp
 
