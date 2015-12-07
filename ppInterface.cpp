@@ -207,12 +207,12 @@ void ppInterface::sortComputersMenu(){
         cout << endl;
         cout << "1. Name" << endl;
         cout << "2. Name desc" << endl;
-        cout << "3. Gender" << endl;
-        cout << "4. Gender desc" << endl;
-        cout << "5. Birthyear " << endl;
-        cout << "6. Birthyear desc " << endl;
-        cout << "7. Year of death " << endl;
-        cout << "8. Year of death desc " << endl;
+        cout << "3. Type" << endl;
+        cout << "4. Type desc" << endl;
+        cout << "5. Was it built " << endl;
+        cout << "6. Was it built desc " << endl;
+        cout << "7. Year built " << endl;
+        cout << "8. Year built desc " << endl;
         cout << endl;
         cout << "Choose computers display order: ";
         cin >> choose;
@@ -220,30 +220,29 @@ void ppInterface::sortComputersMenu(){
 
         switch (choose){
         case '1':
-            pcservice.orderProgrammersBy(PROGRAMMERS_ORDER_NAME);
+            pcservice.orderComputersBy(COMPUTERS_ORDER_NAME);
             break;
         case '2':
-            pcservice.orderProgrammersBy(PROGRAMMERS_ORDER_NAME_DESC);
+            pcservice.orderComputersBy(COMPUTERS_ORDER_NAME_DESC);
             break;
         case '3':
-            pcservice.orderProgrammersBy(PROGRAMMERS_ORDER_GENDER);
+            pcservice.orderComputersBy(COMPUTERS_ORDER_TYPE);
             break;
         case '4':
-            pcservice.orderProgrammersBy(PROGRAMMERS_ORDER_GENDER_DESC);
+            pcservice.orderComputersBy(COMPUTERS_ORDER_TYPE_DESC);
             break;
         case '5':
-            pcservice.orderProgrammersBy(PROGRAMMERS_ORDER_BIRTHYEAR);
+            pcservice.orderComputersBy(COMPUTERS_ORDER_WASITBUILT);
             break;
         case '6':
-            pcservice.orderProgrammersBy(PROGRAMMERS_ORDER_BIRTHYEAR_DESC);
+            pcservice.orderComputersBy(COMPUTERS_ORDER_WASITBUILT_DESC);
             break;
         case '7':
-            pcservice.orderProgrammersBy(PROGRAMMERS_ORDER_DEADYEAR);
+            pcservice.orderComputersBy(COMPUTERS_ORDER_YEARBUILT);
             break;
         case '8':
-            pcservice.orderProgrammersBy(PROGRAMMERS_ORDER_DEADYEAR_DESC);
+            pcservice.orderComputersBy(COMPUTERS_ORDER_YEARBUILT_DESC);
             break;
-
         }
     } while(choose != '1' && choose != '2' && choose != '3' && choose != '4' && choose != '5' && choose != '6' && choose != '7' && choose != '8');
 }
