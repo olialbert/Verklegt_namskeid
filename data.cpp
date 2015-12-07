@@ -204,11 +204,12 @@ void Data::deleteComputer(int computerID) {
     QSqlQuery query;
     string sql = string("DELETE FROM Computers WHERE computerID=") +intToString(computerID);
     query.exec(sql.c_str());
+
 }
 
     // input : order - sort order
     // sets the display order for the selected computers
 void Data::orderComputersBy(string order) {
-
+    computersOrderBy = order;
 }
 

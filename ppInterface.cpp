@@ -84,6 +84,7 @@ void ppInterface::programmersMenu() {
             addProgrammer();
             break;
         case '4':
+           displayProgrammers("");
            deleteProgrammer();
             break;
         case '5':
@@ -123,27 +124,35 @@ void ppInterface::sortProgrammersMenu() {
         switch (choose){
         case '1':
             pcservice.orderProgrammersBy(PROGRAMMERS_ORDER_NAME);
+            displayProgrammers("");
             break;
         case '2':
             pcservice.orderProgrammersBy(PROGRAMMERS_ORDER_NAME_DESC);
+            displayProgrammers("");
             break;
         case '3':
             pcservice.orderProgrammersBy(PROGRAMMERS_ORDER_GENDER);
+            displayProgrammers("");
             break;
         case '4':
             pcservice.orderProgrammersBy(PROGRAMMERS_ORDER_GENDER_DESC);
+            displayProgrammers("");
             break;
         case '5':
             pcservice.orderProgrammersBy(PROGRAMMERS_ORDER_BIRTHYEAR);
+            displayProgrammers("");
             break;
         case '6':
             pcservice.orderProgrammersBy(PROGRAMMERS_ORDER_BIRTHYEAR_DESC);
+            displayProgrammers("");
             break;
         case '7':
             pcservice.orderProgrammersBy(PROGRAMMERS_ORDER_DEADYEAR);
+            displayProgrammers("");
             break;
         case '8':
             pcservice.orderProgrammersBy(PROGRAMMERS_ORDER_DEADYEAR_DESC);
+            displayProgrammers("");
             break;
         }
     } while(choose != '1' && choose != '2' && choose != '3' && choose != '4' && choose != '5' && choose != '6' && choose != '7' && choose != '8');
@@ -181,6 +190,7 @@ void ppInterface::computersMenu(){
             addComputer();
             break;
         case '4':
+           displayComputers("");
            deleteComputer();
             break;
         case '5':
@@ -221,27 +231,35 @@ void ppInterface::sortComputersMenu(){
         switch (choose){
         case '1':
             pcservice.orderComputersBy(COMPUTERS_ORDER_NAME);
+            displayComputers("");
             break;
         case '2':
             pcservice.orderComputersBy(COMPUTERS_ORDER_NAME_DESC);
+            displayComputers("");
             break;
         case '3':
             pcservice.orderComputersBy(COMPUTERS_ORDER_TYPE);
+            displayComputers("");
             break;
         case '4':
             pcservice.orderComputersBy(COMPUTERS_ORDER_TYPE_DESC);
+            displayComputers("");
             break;
         case '5':
             pcservice.orderComputersBy(COMPUTERS_ORDER_WASITBUILT);
+            displayComputers("");
             break;
         case '6':
             pcservice.orderComputersBy(COMPUTERS_ORDER_WASITBUILT_DESC);
+            displayComputers("");
             break;
         case '7':
             pcservice.orderComputersBy(COMPUTERS_ORDER_YEARBUILT);
+            displayComputers("");
             break;
         case '8':
             pcservice.orderComputersBy(COMPUTERS_ORDER_YEARBUILT_DESC);
+            displayComputers("");
             break;
         }
     } while(choose != '1' && choose != '2' && choose != '3' && choose != '4' && choose != '5' && choose != '6' && choose != '7' && choose != '8');
