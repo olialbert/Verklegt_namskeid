@@ -14,7 +14,6 @@ SOURCES += main.cpp \
     ppinterface.cpp \
     data.cpp \
     programmer.cpp \
-    utilities/scientistcomparator.cpp \
     utilities/utils.cpp \
     pcservice.cpp
 

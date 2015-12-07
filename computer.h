@@ -5,7 +5,7 @@ using namespace std;
 
 // stuct that contains information about programmer
 struct Computer {
-    int ComputerId;
+    int ComputerID;
     string Name;
     string Type;
     bool WasItBuilt;

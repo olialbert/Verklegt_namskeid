@@ -1,4 +1,4 @@
-#include "Programmers.h"
+#include "pcservice.h"
 #include "utilities/utils.h"
 #include <iostream>
 #include <fstream>
@@ -7,7 +7,7 @@
 
 using namespace utils;
 
-Programmers::Programmers() {
+pcService::pcService() {
 
 }
 
@@ -31,13 +31,13 @@ void pcService::addProgrammer(Programmer p){
      data.addProgrammer(p);
 }
 
-void pcService::delProgrammer(int programmerId){
-     data.delProgrammer(programmerId);
+void pcService::deleteProgrammer(int programmerId){
+     data.deleteProgrammer(programmerId);
 }
 
-void pcService::updateProgrammer(int programmerId){
+/*void pcService::updateProgrammer(int programmerId){
      data.updateProgrammer(programmerId);
-}
+}*/
 
 void pcService::orderProgrammersBy(string order){
     data.orderProgrammersBy(order);
@@ -68,15 +68,15 @@ void pcService::addComputer(Computer c){
 
     // input : computerId - Id of the computer to be deleted
     // computer with Id, computerId has been deleted from the computers table
-void pcService::delComputer(int computerId){
-    data.delComputer(computerId);
+void pcService::deleteComputer(int computerId){
+    data.deleteComputer(computerId);
 }
 
 
     // input : order - sort order
     // sets the display order for the selected computers
 void pcService::orderComputersBy(string order){
-        data.oderComputersBy(order);
+        data.orderComputersBy(order);
 }
 
 
