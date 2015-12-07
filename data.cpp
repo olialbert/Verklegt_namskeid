@@ -222,6 +222,6 @@ void Data::deleteComputer(int computerID) {
     // input : order - sort order
     // sets the display order for the selected computers
 void Data::orderComputersBy(string order) {
-
+    computersOrderBy = order;
 }
 
