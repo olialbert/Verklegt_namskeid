@@ -178,13 +178,13 @@ void ppInterface::computersMenu(){
             searchComputers();
             break;
         case '3':
-            addProgrammer();
+            addComputer();
             break;
         case '4':
-           deleteProgrammer();
+           deleteComputer();
             break;
         case '5':
-            sortProgrammersMenu();
+            sortComputersMenu();
             break;
         default:
             if(choose != '9')
@@ -313,6 +313,30 @@ void ppInterface::addProgrammer() {
     pcservice.addProgrammer(p);
 }
 
+void ppInterface::addComputer() {
+
+    Computer c;
+
+    cout << "Name                   : " ;
+    getline(cin, c.Name);
+
+    cout << "Type                   : " ;
+    getline(cin, c.Type);
+
+
+    cout << "Was it built (YES/NO)? : " ;
+    string wb;
+    getline(cin, wb);
+    c.WasItBuilt = yesNoToInt(wb);
+
+    cout << "Year built    : " ;
+    string yb;
+    getline(cin, yb);
+    c.YearBuilt = stringToInt(yb);
+
+    pcservice.addComputer(c);
+}
+
 void ppInterface::deleteProgrammer(){
     int programmerID;
     cout << "Delete programmer with ID: ";
@@ -320,3 +344,9 @@ void ppInterface::deleteProgrammer(){
     pcservice.deleteProgrammer(programmerID);
 }
 
+void ppInterface::deleteComputer(){
+    int computerID;
+    cout << "Delete computer with ID: ";
+    cin >> computerID;
+    pcservice.deleteComputer(computerID);
+}
