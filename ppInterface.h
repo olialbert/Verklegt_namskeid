@@ -8,11 +8,16 @@ class ppInterface
 {
     public:
         ppInterface();
-        int start();
+
+        int mainMenu();
 
     private:
-            //MENU
-        void sortProgrammers();
+            //Programmers Menues
+        void programmersMenu();
+        void sortProgrammersMenu();
+
+        void computersMenu();
+        void sortComputersMenu();
 
           // ask user for search string and displayes all programmers that are in the search criteria
         void searchProgrammers();

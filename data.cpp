@@ -161,25 +161,3 @@ void Data::orderComputersBy(string order) {
 
 }
 
-//*************************************************************************************
-
-
-/*
-void Data::loadDB(string sort){
-        QSqlQuery query;
-        string sql =  "select * from Programmers order by ";
-        sql.append(sort);
-        query.exec(sql.c_str());
-        Programmer p;
-        programmers.clear();
-        while(query.next())
-        {
-            p.Name = query.value("Name").toString().toStdString();
-            p.Gender = stringToGender(query.value("Gender").toString().toStdString());
-            p.BirthYear = stringToInt(query.value("BirthYear").toString().toStdString());
-            p.DeadYear = stringToInt(query.value("DeadYear").toString().toStdString());
-
-            programmers.push_back(p);
-        }
-}
-*/

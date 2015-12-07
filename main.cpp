@@ -8,6 +8,6 @@ using namespace std;
 int main()
 {
     ppInterface ppi;
-    return ppi.start();   
+    return ppi.mainMenu();
 }
 
