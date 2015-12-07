@@ -21,16 +21,20 @@ class ppInterface
 
           // ask user for search string and displayes all programmers that are in the search criteria
         void searchProgrammers();
+        void searchComputers();
+
 
           // input : sSearch - search criteria
           // displayes all programmers that are in the search criteria
         void displayProgrammers(string search);
+        void displayComputers(string search);
 
           // reads info about the new programmer that the user puts inn and adds to the list
         void addProgrammer();
 
           // asks for nr of the programmer to delete and removes him from the list
         void deleteProgrammer();
+
 
     private:
         pcService pcservice;

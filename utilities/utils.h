@@ -24,6 +24,9 @@ namespace utils {
     char stringToGender(string str);
 
     string genderToString(char c);
+
+    int yesNoToInt(string yesNo);
+    string intToYesNo(int i);
 }
 
 #endif // UTILS_H

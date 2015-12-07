@@ -19,6 +19,7 @@ int ppInterface::mainMenu(){
     string s;
 
     do{
+        cout << endl;
         cout << "*******  MAIN MENU  *********************** " << endl;
         cout << "Please choose one of the fallowing actions: " << endl;
         cout << endl;
@@ -56,6 +57,7 @@ void ppInterface::programmersMenu() {
 
 
     do{
+        cout << endl;
         cout << "*******  PROGRAMMERS MENU  **************** " << endl;
         cout << "Please choose one of the following actions: " << endl;
         cout << endl;
@@ -152,6 +154,7 @@ void ppInterface::computersMenu(){
     string s;
 
     do{
+        cout << endl;
         cout << "*******  COMPUTERS MENU  ****************** " << endl;
         cout << "Please choose one of the following actions: " << endl;
         cout << endl;
@@ -169,10 +172,10 @@ void ppInterface::computersMenu(){
 
         switch (choose){
         case '1':
-            displayProgrammers("");
+            displayComputers("");
             break;
         case '2':
-            searchProgrammers();
+            searchComputers();
             break;
         case '3':
             addProgrammer();
@@ -246,11 +249,20 @@ void ppInterface::sortComputersMenu(){
 }
 
 void ppInterface::searchProgrammers() {
-    string sSearch;
+    string search;
     cout << "Search for : ";
-    cin >> sSearch;
-    displayProgrammers(sSearch);
+    cin >> search;
+    displayProgrammers(search);
 }
+
+void ppInterface::searchComputers(){
+    string search;
+    cout << "Search for : ";
+    cin >> search;
+    displayComputers(search);
+}
+
+
 
 void ppInterface::displayProgrammers(string search) {
     vector<Programmer> programmers = pcservice.findProgrammers(search);
@@ -261,6 +273,18 @@ void ppInterface::displayProgrammers(string search) {
                    genderToString(programmers[i].Gender).c_str(),
                    programmers[i].BirthYear,
                    intToString(programmers[i].DeadYear).c_str());
+    }
+}
+
+void ppInterface::displayComputers(string search) {
+    vector<Computer> computers = pcservice.findComputers(search);
+     for (unsigned int i = 0; i<computers.size();  i++) {
+            printf("%-4i : %-40s - %-45s - %-4s - %-4s\n",
+                   computers[i].computerID,
+                   computers[i].Name.c_str(),
+                   computers[i].Type.c_str(),
+                   intToYesNo(computers[i].WasItBuilt).c_str(),
+                   intToString(computers[i].YearBuilt).c_str());
     }
 }
 

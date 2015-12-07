@@ -35,10 +35,9 @@ Data::~Data() {
 
 // ********* PROGRAMMERS *************************************************************************
 
-Programmer Data::getProgrammer(int programmerId){
+Programmer Data::getProgrammer(int programmerID){
     QSqlQuery query;
-    string sql =  "select * from Programmers  where ID=";
-    sql.append(intToString(programmerId));
+    string sql =  string("select * from Programmers  where programmerID=") +intToString(programmerID);
     query.exec(sql.c_str());
     Programmer p;
 
@@ -62,9 +61,9 @@ vector<Programmer> Data::findProgrammers(string search){
     if (search.length()>0)
         sql +=  string(" where name like '%") +search+ string("%' or gender like '%") +search+ string("%'");//
     if(year>0)
-        sql+= string (" or birthyear =")+ search+ string(" or deadyear =") +search+ string(" ");
+        sql+= string (" or birthyear like '%")+ search+ string("%' or deadyear like '%") +search+ string("%' ");
     sql +=  string(" order by ") +programmersOrderBy;
-
+    //cout << sql << endl;
     query.exec(sql.c_str());
     Programmer p;
     while(query.next())
@@ -80,11 +79,11 @@ vector<Programmer> Data::findProgrammers(string search){
     return programmers;
 }
 
-vector<Programmer> Data::getProgrammers(int computerId){
+vector<Programmer> Data::getProgrammers(int computerID){
     vector<Programmer> programmers;
     QSqlQuery query;
     string sql =  string("SELECT p. * from Programmers p, BestOfBothWorlds bob")+
-                  string(" where p.programmerID = bob.programmerID and bob.computerID =") + intToString(computerId)+
+                  string(" where p.programmerID = bob.programmerID and bob.computerID =") + intToString(computerID)+
                   string(" order by ") +programmersOrderBy;
     query.exec(sql.c_str());
     Programmer p;
@@ -126,24 +125,76 @@ void Data::orderProgrammersBy(string order){
 // ********* COMPUTERS *************************************************************************
 
 Computer Data::getComputer(int computerID) {
+    QSqlQuery query;
+    string sql =  string("select * from Computers where computerID=") + intToString(computerID);
+    query.exec(sql.c_str());
     Computer c;
+
+
+    if(query.next())
+    {
+        c.computerID = stringToInt(query.value("computerID").toString().toStdString());
+        c.Name = query.value("Name").toString().toStdString();
+        c.Type = query.value("Type").toString().toStdString();
+        c.WasItBuilt = query.value("WasItBuilt").toInt();
+        c.YearBuilt = stringToInt(query.value("YearBuilt").toString().toStdString());
+    }
     return c;
 }
 
-vector<Computer> Data::findComputer(string search) {
-    vector<Computer> c;
-    return c;
+vector<Computer> Data::findComputers(string search) {
+    vector<Computer> computers;
+    int year = stringToInt(search);
+    QSqlQuery query;
+    string sql =  string("select * from Computers ");
+    if (search.length()>0)
+        sql +=  string(" where name like '%") +search+ string("%' or type like '%") +search+ string("%' ");
+    if(year>0)
+        sql+= string(" or yearbuilt like '%") +search+ string("%' ");
+    sql +=  string(" order by ") +computersOrderBy;
+    //cout << sql << endl;
+    query.exec(sql.c_str());
+    Computer c;
+    while(query.next())
+    {
+        c.computerID = stringToInt(query.value("computerID").toString().toStdString());
+        c.Name = query.value("Name").toString().toStdString();
+        c.Type = query.value("Type").toString().toStdString();
+        c.WasItBuilt = query.value("WasItBuilt").toInt();
+        c.YearBuilt = stringToInt(query.value("YearBuilt").toString().toStdString());
+
+        computers.push_back(c);
+    }
+    return computers;
 }
 
 vector<Computer> Data::getComputers(int programmerID){
-    vector<Computer> c;
-    return c;
+    vector<Computer> computers;
+    QSqlQuery query;
+    string sql =  string("SELECT c. * from Computers c, BestOfBothWorlds bob")+
+                  string(" where c.computerID = bob.computerID and bob.programmerID =") + intToString(programmerID)+
+                  string(" order by ") +computersOrderBy;
+    query.exec(sql.c_str());
+    Computer c;
+    while(query.next())
+    {
+        c.computerID = stringToInt(query.value("computerID").toString().toStdString());
+        c.Name = query.value("Name").toString().toStdString();
+        c.Type = query.value("Type").toString().toStdString();
+        c.WasItBuilt = query.value("WasItBuilt").toInt();
+        c.YearBuilt = stringToInt(query.value("YearBuilt").toString().toStdString());
+
+        computers.push_back(c);
+    }
+    return computers;
 }
 
     // input : c - computer to be added
     // computer c as been added to the computers table
-void Data::addComputer(Computer p) {
-
+void Data::addComputer(Computer c) {
+    QSqlQuery query;
+    string sql = string("insert into Computers(name, type, wasitbuilt, yearbuilt) values('")+c.Name+string("','")+c.Type+string("',")+intToString(c.WasItBuilt)+string(",")+intToString(c.YearBuilt)+string(")");
+    query.exec(sql.c_str());
 }
 
     // input : computerId - Id of the computer to be deleted

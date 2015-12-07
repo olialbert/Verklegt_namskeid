@@ -51,8 +51,8 @@ Computer pcService::getComputer(int id){
 }
 
     //
-vector<Computer> pcService::findComputer(string search){
-    return data.findComputer(search);
+vector<Computer> pcService::findComputers(string search){
+    return data.findComputers(search);
 }
 
     //

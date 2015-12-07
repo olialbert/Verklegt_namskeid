@@ -44,7 +44,7 @@ class pcService
         Computer getComputer(int id);
 
             //
-        vector<Computer> findComputer(string search);
+        vector<Computer> findComputers(string search);
 
             //
         vector<Computer> getComputers(int programmerID);

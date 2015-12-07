@@ -88,4 +88,23 @@ namespace utils {
             return "Male";
         }
     }
+
+    int yesNoToInt(string yesNo){
+        if(stringToLower(yesNo.substr(0, 1))== "y"){
+            return 1;
+        }else{
+            return 0;
+        }
+    }
+
+    string intToYesNo(int i){
+        if(i == 1){
+            return "Yes";
+        }else{
+            return "No";
+        }
+    }
+
+
  }
+

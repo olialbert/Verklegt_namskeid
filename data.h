@@ -48,14 +48,14 @@ class Data
         Computer getComputer(int computerID);
 
             //
-        vector<Computer> findComputer(string search);
+        vector<Computer> findComputers(string search);
 
             //
         vector<Computer> getComputers(int programmerID);
 
             // input : c - computer to be added
             // computer c as been added to the computers table
-        void addComputer(Computer p);
+        void addComputer(Computer c);
 
             // input : computerId - Id of the computer to be deleted
             // computer with Id, computerId has been deleted from the computers table
@@ -69,7 +69,6 @@ class Data
         QSqlDatabase mydb;
         string programmersOrderBy;
         string computersOrderBy;
-        void loadDB(string sort);
 };
 
 #endif
