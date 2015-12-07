@@ -20,7 +20,11 @@ class Data
              // input : programmerId - id of the programmer
             // returns : programmer with id programmerId
         Programmer getProgrammer(int programmerId);
+
+            // ToDo add comment ...
         vector<Programmer> findProgrammers(string search);
+
+            //
         vector<Programmer> getProgrammers(int computerId);
 
             // input : p - programmer to be added
@@ -30,6 +34,8 @@ class Data
             // input : programmerId - Id of the programmer to be deleted
             // programmer with Id, programerId has been deleted from the programmers table
         void delProgrammer(int programmerId);
+
+            //
         void updateProgrammer(int programmerId);
 
              // input : order - sort order
@@ -38,8 +44,13 @@ class Data
 
         // ********* COMPUTERS *************************************************************************
 
+            //
         Computer getComputer(int id);
+
+            //
         vector<Computer> findComputer(string search);
+
+            //
         vector<Computer> getComputers(int programmerID);
 
             // input : c - computer to be added
@@ -56,8 +67,8 @@ class Data
 
     private:
         QSqlDatabase mydb;
-        string programmersOrderBy = "ID";
-        string computersOrderBy = "ID";
+        string programmersOrderBy;
+        string computersOrderBy;
         void loadDB(string sort);
 };
 

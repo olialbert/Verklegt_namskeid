@@ -10,31 +10,73 @@ using namespace utils;
 Programmers::Programmers() {
 
 }
-vector<Programmer> findProgrammers(string search){
-     return data.finProgrammers(search);
-}
 
-Programmer getProgrammer(int programmerId){
+// ********* PROGRAMMERS *************************************************************************
+
+
+Programmer pcService::getProgrammer(int programmerId){
     return data.getProgrammer(programmerId);
 }
 
-vector<Programmer> getProgrammers(int computerId){
+vector<Programmer> pcService::findProgrammers(string search) {
+    return data.findProgrammers(search);
+}
+
+vector<Programmer> pcService::getProgrammers(int computerId){
     return data.getProgrammers(computerId);
 }
 
-void addProgrammer(Programmer p){
-    return data.addProgrammer(p);
+
+void pcService::addProgrammer(Programmer p){
+     data.addProgrammer(p);
 }
 
-void delProgrammer(int programmerId){
-    return data.delProgrammer(programmerId);
-}
-void updateProgrammer(int programmerId){
-    return data.updateProgrammer(programmerId);
+void pcService::delProgrammer(int programmerId){
+     data.delProgrammer(programmerId);
 }
 
-void orderProgrammersBy(string order){
-    return data.orderProgrammersBy(order);
+void pcService::updateProgrammer(int programmerId){
+     data.updateProgrammer(programmerId);
+}
+
+void pcService::orderProgrammersBy(string order){
+    data.orderProgrammersBy(order);
+}
+
+// ********* COMPUTERS *************************************************************************
+
+    //
+Computer pcService::getComputer(int id){
+    return data.getComputer(id);
+}
+
+    //
+vector<Computer> pcService::findComputer(string search){
+    return data.findComputer(search);
+}
+
+    //
+vector<Computer> pcService::getComputers(int programmerID){
+    return data.getComputers(programmerID);
+}
+
+    // input : c - computer to be added
+    // computer c as been added to the computers table
+void pcService::addComputer(Computer c){
+    data.addComputer(c);
+}
+
+    // input : computerId - Id of the computer to be deleted
+    // computer with Id, computerId has been deleted from the computers table
+void pcService::delComputer(int computerId){
+    data.delComputer(computerId);
+}
+
+
+    // input : order - sort order
+    // sets the display order for the selected computers
+void pcService::orderComputersBy(string order){
+        data.oderComputersBy(order);
 }
 
 

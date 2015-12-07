@@ -2,42 +2,66 @@
 #define PROGRAMMERS_H
 #include <iostream>
 #include <vector>
-#include "Programmer.h"
+#include "programmer.h"
+#include "computer.h"
 #include "data.h"
 using namespace std;
 
 
-class Programmers
+class pcService
 {
     public:
-        Programmers();
+        pcService();
 
-          // input : nr - nr of the programmer
-          // returns : programmer at position nr
-        Programmer getProgrammer(int nr);
+        // ********* PROGRAMMERS *************************************************************************
 
-          // input : p - programmer to be added
-          // programmer p as been added to the programmers list
-        void add(Programmer p);
+            // input : programmerId - id of the programmer
+            // returns : programmer with id programmerId
+        Programmer getProgrammer(int programmerId);
 
-          // programmer at nr has been deleted from the programmers list
-        void del(int nr);
+            //
+        vector<Programmer> findProgrammers(string search);
 
-          // input : v - vector<int>
-          //         sSearch - search criteria
-          // v includes nr of all programmers that fullfill the search criteria
-        void Find(vector<int>& pr, string sSearch);
+            //
+        vector<Programmer> getProgrammers(int computerId);
 
-          // sorts the programmers by name
+            // input : p - programmer to be added
+            // programmer p as been added to the programmers table
+        void addProgrammer(Programmer p);
 
-        // returns the numbers of all programmers that matches the search criteria
-        void read();
-        void add(Programmer p);
-        void del(int nr);
+            // input : programmerId - Id of the programmer to be deleted
+            // programmer with Id, programerId has been deleted from the programmers table
+        void delProgrammer(int programmerId);
+        void updateProgrammer(int programmerId);
 
-        // returns the numbers of all programmers that matches the search criteria
-        void Find(vector<int>& pr, string sSearch);
-    private:
+             // input : order - sort order
+            // sets the display order for the selected programmers
+        void orderProgrammersBy(string order);
+
+        // ********* COMPUTERS *************************************************************************
+
+            //
+        Computer getComputer(int id);
+
+            //
+        vector<Computer> findComputer(string search);
+
+            //
+        vector<Computer> getComputers(int programmerID);
+
+            // input : c - computer to be added
+            // computer c as been added to the computers table
+        void addComputer(Computer c);
+
+            // input : computerId - Id of the computer to be deleted
+            // computer with Id, computerId has been deleted from the computers table
+        void delComputer(int computerId);
+
+            // input : order - sort order
+            // sets the display order for the selected computers
+        void orderComputersBy(string order);
+
+private:
         Data data;
 };
 

@@ -1,6 +1,6 @@
 #ifndef PPINTERFACE_H
 #define PPINTERFACE_H
-#include "programmers.h"
+#include "pcservice.h"
 using namespace std;
 
 class ppInterface
@@ -18,7 +18,7 @@ class ppInterface
 
           // input : sSearch - search criteria
           // displayes all programmers that are in the search criteria
-        void display(string sSearch);
+        void displayProgrammers(string sSearch);
 
           // reads info about the new programmer that the user puts inn and adds to the list
         void addProgrammer();

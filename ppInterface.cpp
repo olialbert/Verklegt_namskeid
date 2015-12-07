@@ -1,6 +1,7 @@
 #include "ppInterface.h"
 #include "utilities/utils.h"
-#include "constants.h"
+#include "utilities/constants.h"
+#include "pcservice.h"
 #include <stdio.h>
 #include <string>
 
@@ -51,10 +52,7 @@ int ppInterface::start() {
            deleteProgrammer();     //fjarlægir úr listanum
             break;
         case '5':                      // raðar listanum í stafrófsröð
-            sortProgrammers(1);
-            break;
-        case '6':                      //  Sýnir allan listan raðaðan eftir kyni og stafrófsröð
-            sortProgrammers(2);
+            sortProgrammers();
             break;
         case '7':                      //vistar breytingar í skrána.
             save();

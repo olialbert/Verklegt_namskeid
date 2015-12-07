@@ -18,6 +18,8 @@ using namespace utils;
 
 
 Data::Data() {
+    computersOrderBy = "computerID";
+    programmersOrderBy = "programmerID";
     mydb = QSqlDatabase::addDatabase("QSQLITE");
     QString dbName =  QString(DATABASE_FILE_NAME.c_str());
     mydb.setDatabaseName(dbName);
@@ -122,21 +124,37 @@ void orderProgrammersBy(string order){
 
 // ********* COMPUTERS *************************************************************************
 
-Computer getComputer(int id);
-vector<Computer> findComputer(string search);
-vector<Computer> getComputers(int programmerID);
+Computer getComputer(int id) {
+    Computer c;
+    return c;
+}
+
+vector<Computer> findComputer(string search) {
+    vector<Computer> c;
+    return c;
+}
+
+vector<Computer> getComputers(int programmerID){
+    vector<Computer> c;
+    return c;
+}
 
     // input : c - computer to be added
     // computer c as been added to the computers table
-void addComputer(Computer p);
+void addComputer(Computer p) {
+
+}
 
     // input : computerId - Id of the computer to be deleted
     // computer with Id, computerId has been deleted from the computers table
-void delComputer(int computerId);
+void delComputer(int computerId) {
+}
 
     // input : order - sort order
     // sets the display order for the selected computers
-void orderComputersBy(string order);
+void orderComputersBy(string order) {
+
+}
 
 //*************************************************************************************
 
