@@ -195,11 +195,15 @@ void Data::addComputer(Computer c) {
     QSqlQuery query;
     string sql = string("insert into Computers(name, type, wasitbuilt, yearbuilt) values('")+c.Name+string("','")+c.Type+string("',")+intToString(c.WasItBuilt)+string(",")+intToString(c.YearBuilt)+string(")");
     query.exec(sql.c_str());
+    cout << sql << endl;
 }
 
     // input : computerId - Id of the computer to be deleted
     // computer with Id, computerId has been deleted from the computers table
 void Data::deleteComputer(int computerID) {
+    QSqlQuery query;
+    string sql = string("DELETE FROM Computers WHERE computerID=") +intToString(computerID);
+    query.exec(sql.c_str());
 }
 
     // input : order - sort order

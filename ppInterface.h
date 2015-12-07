@@ -31,10 +31,11 @@ class ppInterface
 
           // reads info about the new programmer that the user puts inn and adds to the list
         void addProgrammer();
+        void addComputer();
 
           // asks for nr of the programmer to delete and removes him from the list
         void deleteProgrammer();
-
+        void deleteComputer();
 
     private:
         pcService pcservice;
