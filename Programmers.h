@@ -35,6 +35,7 @@ class Programmers
         void read();
         void add(Programmer p);
         void del(int nr);
+        void orderProgrammersBy(string order);
 
         // returns the numbers of all programmers that matches the search criteria
         void Find(vector<int>& pr, string sSearch);

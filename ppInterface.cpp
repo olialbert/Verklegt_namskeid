@@ -1,6 +1,6 @@
 #include "ppInterface.h"
 #include "utilities/utils.h"
-#include "constants.h"
+#include "utilities/constants.h"
 #include <stdio.h>
 #include <string>
 
@@ -17,7 +17,7 @@ ppInterface::ppInterface()
 int ppInterface::start() {
     char choose;  // breyta fyrir val á aðgerð
 
-    cout << "lalalalalalaThis is a program that contains information about famous computer scientists" << endl; //texti sem útsýkrir hvað forritið gerir
+    cout << "This is a program that contains information about famous computer scientists" << endl; //texti sem útsýkrir hvað forritið gerir
     cout << "------------------------------------------------------------------------------" << endl;
     cout << "Pleas choose one of the following actions" << endl;
 
@@ -39,16 +39,16 @@ int ppInterface::start() {
 
         switch (choose){
         case '1':                      //  Sýnir allan listannn
-            displayProgrammers("");
+           vector<Programmer> getProgrammers(int computerId);
             break;
         case '2':                      //leita í lista
             search();
             break;
         case '3':
-            addProgrammer();       //bætir við listann
+            void addProgrammer(Programmer p);       //bætir við listann
             break;
         case '4':
-           deleteProgrammer();     //fjarlægir úr listanum
+           void delProgrammer(int programmerId);     //fjarlægir úr listanum
             break;
         case '5':                      // raðar listanum í stafrófsröð
             sortProgrammers(1);
@@ -56,9 +56,7 @@ int ppInterface::start() {
         case '6':                      //  Sýnir allan listan raðaðan eftir kyni og stafrófsröð
             sortProgrammers(2);
             break;
-        case '7':                      //vistar breytingar í skrána.
-            save();
-            break;
+
         default:
             if(choose != '8')
                 cout << "Invalid choice" << endl;
@@ -71,15 +69,15 @@ int ppInterface::start() {
 
 void ppInterface::sortProgrammers() {
     char choose;  // breyta fyrir val á aðgerð
-
+    Programmers programmers;
     string s;
     do{
         cout << endl;
         cout << "Sort by :" << endl;
-        cout << "1. Name" << endl;
-        cout << "2. Name desc" << endl;
-        cout << "3. Gender" << endl;
-        cout << "4. Gender desc" << endl;
+        cout << "1. Name ascending order" << endl;
+        cout << "2. Name descending order" << endl;
+        cout << "3. Gender ascending order" << endl;
+        cout << "4. Gender descending order" << endl;
         cout << endl;
         cout << "Choose Programmers sorting : ";
         cin >> choose;
@@ -87,22 +85,22 @@ void ppInterface::sortProgrammers() {
 
         switch (choose){
         case '1':
-            programmers.orderProgrammerBy(PROGRAMMERS_ORDER_NAME);
+            programmers.orderProgrammersBy(PROGRAMMERS_ORDER_NAME);
             break;
         case '2':
-            programmers.orderProgrammerBy(PROGRAMMERS_ORDER_NAME_DESC);
+            programmers.orderProgrammersBy(PROGRAMMERS_ORDER_NAME_DESC);
             break;
         case '3':
-            programmers.orderProgrammerBy(PROGRAMMERS_ORDER_GENDER);
+            programmers.orderProgrammersBy(PROGRAMMERS_ORDER_GENDER);
             break;
         case '4':
-            programmers.orderProgrammerBy(PROGRAMMERS_ORDER_GENDER_DESC);
+            programmers.orderProgrammersBy(PROGRAMMERS_ORDER_GENDER_DESC);
             break;
         }
     } while(choose != '1' && choose != '2' && choose != '3' && choose != '4');
 }
 
-void ppInterface::search() {
+/*void ppInterface::search() {
     string sSearch;
     cout << "Search for : ";
     cin >> sSearch;
@@ -165,4 +163,4 @@ void ppInterface::sortProgrammers(int type){
         programmers.sortByName();    // default
     }
     display("");
-}
+}*/

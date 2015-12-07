@@ -80,7 +80,7 @@ vector<Programmer> getProgrammers(int computerId){
     QSqlQuery query;
     string sql =  "SELECT p. * from Programmers p, BestOfBothWorlds bob "
                   " where p.programmerID = bob.programmerID and bob.computerID = " + intToString(computerId)+
-                  " order by " +programmersOrderBy;
+                  " order by " + programmersOrderBy;
     query.exec(sql.c_str());
     Programmer p;
     while(query.next())
