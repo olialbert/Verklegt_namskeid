@@ -16,7 +16,7 @@ SOURCES += main.cpp \
     programmer.cpp \
     utilities/scientistcomparator.cpp \
     utilities/utils.cpp \
-    programmers.cpp
+    pcservice.cpp
 
 HEADERS += \
     programmer.h \
@@ -25,4 +25,4 @@ HEADERS += \
     utilities/constants.h \
     computer.h \
     utilities/utils.h \
-    programmers.h
+    pcservice.h

@@ -14,7 +14,6 @@ class Programmers
 
           // input : nr - nr of the programmer
           // returns : programmer at position nr
-
         Programmer getProgrammer(int nr);
 
           // input : p - programmer to be added
