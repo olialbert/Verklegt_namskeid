@@ -110,9 +110,9 @@ void Data::addProgrammer(Programmer p){
     query.exec(sql.c_str());
 }
 
-void Data::deleteProgrammer(int programmerId){
+void Data::deleteProgrammer(int programmerID){
     QSqlQuery query;
-    string sql = "DELETE FROM Programmer WHERE ProgrammerID=" +programmerId;
+    string sql = string("DELETE FROM Programmers WHERE ProgrammerID=") +intToString(programmerID);
     cout << sql << endl; // TODO remove
     query.exec(sql.c_str());
 }
@@ -129,7 +129,7 @@ void Data::orderProgrammersBy(string order){
 
 // ********* COMPUTERS *************************************************************************
 
-Computer Data::getComputer(int id) {
+Computer Data::getComputer(int computerID) {
     Computer c;
     return c;
 }
@@ -152,7 +152,7 @@ void Data::addComputer(Computer p) {
 
     // input : computerId - Id of the computer to be deleted
     // computer with Id, computerId has been deleted from the computers table
-void Data::deleteComputer(int computerId) {
+void Data::deleteComputer(int computerID) {
 }
 
     // input : order - sort order
