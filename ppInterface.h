@@ -1,6 +1,7 @@
 #ifndef PPINTERFACE_H
 #define PPINTERFACE_H
 #include "pcservice.h"
+
 using namespace std;
 
 class ppInterface
@@ -33,6 +34,7 @@ class ppInterface
         void sortProgrammers(int type);
 
     private:
+        pcService pcservice;
 };
 
 #endif // PPINTERFACE_H

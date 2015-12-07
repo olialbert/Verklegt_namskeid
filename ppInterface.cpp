@@ -85,16 +85,16 @@ void ppInterface::sortProgrammers() {
 
         switch (choose){
         case '1':
-            programmers.orderProgrammerBy(PROGRAMMERS_ORDER_NAME);
+            pcservice.orderProgrammerBy(PROGRAMMERS_ORDER_NAME);
             break;
         case '2':
-            programmers.orderProgrammerBy(PROGRAMMERS_ORDER_NAME_DESC);
+            pcservice.orderProgrammerBy(PROGRAMMERS_ORDER_NAME_DESC);
             break;
         case '3':
-            programmers.orderProgrammerBy(PROGRAMMERS_ORDER_GENDER);
+            pcservice.orderProgrammerBy(PROGRAMMERS_ORDER_GENDER);
             break;
         case '4':
-            programmers.orderProgrammerBy(PROGRAMMERS_ORDER_GENDER_DESC);
+            pcservice.orderProgrammerBy(PROGRAMMERS_ORDER_GENDER_DESC);
             break;
         }
     } while(choose != '1' && choose != '2' && choose != '3' && choose != '4');
