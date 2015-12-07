@@ -42,6 +42,8 @@ class Data
             // sets the display order for the selected programmers
         void orderProgrammersBy(string order);
 
+        void connectProgrammerToComputer(int computerID, int programmerID);
+
         // ********* COMPUTERS *************************************************************************
 
             //

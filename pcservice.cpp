@@ -43,6 +43,10 @@ void pcService::orderProgrammersBy(string order){
     data.orderProgrammersBy(order);
 }
 
+void pcService::connectProgrammerToComputer(int computerID, int programmerID){
+    data.connectProgrammerToComputer(computerID, programmerID);
+}
+
 // ********* COMPUTERS *************************************************************************
 
     //

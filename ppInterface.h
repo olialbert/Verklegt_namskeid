@@ -28,6 +28,7 @@ class ppInterface
           // displayes all programmers that are in the search criteria
         void displayProgrammers(string search);
         void displayComputers(string search);
+        void displayProgrammerAndComputers();
 
           // reads info about the new programmer that the user puts inn and adds to the list
         void addProgrammer();
@@ -37,7 +38,9 @@ class ppInterface
         void deleteProgrammer();
         void deleteComputer();
 
-    private:
+        void connectProgrammerToComputer();
+
+
         pcService pcservice;
 };
 

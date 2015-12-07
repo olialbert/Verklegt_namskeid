@@ -110,6 +110,10 @@ void Data::deleteProgrammer(int programmerID){
     QSqlQuery query;
     string sql = string("DELETE FROM Programmers WHERE ProgrammerID=") +intToString(programmerID);
     query.exec(sql.c_str());
+
+    sql = string("DELETE FROM BestOfBothWorlds WHERE ProgrammerID=") +intToString(programmerID);
+    query.exec(sql.c_str());
+
 }
 
 /*void Data::updateProgrammer(Programmer p){
@@ -120,6 +124,13 @@ void Data::deleteProgrammer(int programmerID){
 
 void Data::orderProgrammersBy(string order){
     programmersOrderBy = order;
+}
+
+void Data::connectProgrammerToComputer(int computerID, int programmerID){
+    QSqlQuery query;
+    string sql = string("insert into BestOfBothWorlds(programmerID, computerID) values(")+intToString(programmerID)+string(", ")+intToString(computerID)+string(")");
+    query.exec(sql.c_str());
+
 }
 
 // ********* COMPUTERS *************************************************************************
@@ -203,6 +214,8 @@ void Data::addComputer(Computer c) {
 void Data::deleteComputer(int computerID) {
     QSqlQuery query;
     string sql = string("DELETE FROM Computers WHERE computerID=") +intToString(computerID);
+    query.exec(sql.c_str());
+    sql = string("DELETE FROM BestOfBothWorlds WHERE computerID=") +intToString(computerID);
     query.exec(sql.c_str());
 }
 
