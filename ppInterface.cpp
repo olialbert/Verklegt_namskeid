@@ -116,7 +116,7 @@ void ppInterface::sortProgrammersMenu() {
 
     do{
         cout << endl;
-        cout << "*******  PROGRAMMERS DISPLAY MENU  ******** " << endl;
+        cout << "***********  PROGRAMMERS DISPLAY MENU  ******** " << endl;
         cout << "Please choose one of the following actions: " << endl;
         cout << "Order programmers by :" << endl;
         cout << endl;
