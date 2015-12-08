@@ -108,11 +108,12 @@ void Data::addProgrammer(Programmer p){
 
 void Data::deleteProgrammer(int programmerID){
     QSqlQuery query;
-    string sql = string("DELETE FROM Programmers WHERE ProgrammerID=") +intToString(programmerID);
+    string sql = string("DELETE FROM BestOfBothWorlds WHERE ProgrammerID=") +intToString(programmerID);
     query.exec(sql.c_str());
 
-    sql = string("DELETE FROM BestOfBothWorlds WHERE ProgrammerID=") +intToString(programmerID);
+     sql = string("DELETE FROM Programmers WHERE ProgrammerID=") +intToString(programmerID);
     query.exec(sql.c_str());
+
 
 }
 
@@ -213,9 +214,9 @@ void Data::addComputer(Computer c) {
     // computer with Id, computerId has been deleted from the computers table
 void Data::deleteComputer(int computerID) {
     QSqlQuery query;
-    string sql = string("DELETE FROM Computers WHERE computerID=") +intToString(computerID);
-    query.exec(sql.c_str());
     sql = string("DELETE FROM BestOfBothWorlds WHERE computerID=") +intToString(computerID);
+    query.exec(sql.c_str());
+    string sql = string("DELETE FROM Computers WHERE computerID=") +intToString(computerID);
     query.exec(sql.c_str());
 }
 
