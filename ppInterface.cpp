@@ -322,17 +322,21 @@ void ppInterface::addProgrammer() {
     getline(cin, p.Name);
 
     string g;
-    cout << "Gender   : " ;
+    cout << "Gender (M/F)  : " ;
     getline(cin, g);
     p.Gender = stringToGender(g);
 
-    cout << "BirthYear : " ;
     string b;
-    getline(cin, b);
+    while (stringToInt(b) == 0) {
+        cout << "BirthYear : " ;
+        getline(cin, b);
+        if (stringToInt(b) == 0)
+            cout << "Invalid year" << endl;
+    }
     p.BirthYear = stringToInt(b);
 
-    cout << "Year of Death     : " ;
     string d;
+    cout << "Year of Death     : " ;
     getline(cin, d);
     p.DeadYear = stringToInt(d);
 
