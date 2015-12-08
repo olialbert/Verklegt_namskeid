@@ -31,6 +31,7 @@ class ppInterface
         void displayProgrammers(string search);
         void displayComputers(string search);
         void displayProgrammerAndComputers();
+        void displayComputerAndProgrammers();
 
           // reads info about the new programmer that the user puts inn and adds to the list
         void addProgrammer();

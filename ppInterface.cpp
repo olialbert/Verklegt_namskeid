@@ -286,7 +286,9 @@ void ppInterface::proANDcomMenu() {
         cout << "*******  PROGRAMMERS AND COMPUTERS MENU  ****************** " << endl;
         cout << "Please choose one of the following actions: " << endl;
         cout << endl;
-        cout << "1. Display           " << endl;
+        cout << "1. Display pro to computer   " << endl;
+        cout << "2. Display computer to pro " << endl;
+        cout << "3. Connect Computer an Programmer" << endl;
         cout << "9. Back to Main Menu " << endl;
         cout << endl;
         cout << "Action number: ";
@@ -296,8 +298,14 @@ void ppInterface::proANDcomMenu() {
 
         switch (choose){
         case '1':
-            pcservice.orderComputersBy(COMPUTERS_ORDER_NAME);
-            displayComputers("");
+            displayProgrammerAndComputers();
+            break;
+        case '2':
+            displayComputerAndProgrammers();
+            break;
+
+        case '3':
+            connectProgrammerToComputer();
             break;
         default:
             if(choose != '9')
@@ -327,7 +335,7 @@ void ppInterface::searchComputers(){
 void ppInterface::displayProgrammers(string search) {
     vector<Programmer> programmers = pcservice.findProgrammers(search);
      for (unsigned int i = 0; i<programmers.size();  i++) {
-            printf("%-4i : %-40s - %-8s - %-4i - %-4s\n",
+            printf("%-4i : %-40s ---- %-8s -- %-4i -- %-4s\n",
                    programmers[i].programmerID,
                    programmers[i].Name.c_str(),
                    genderToString(programmers[i].Gender).c_str(),
@@ -452,3 +460,30 @@ void ppInterface::displayProgrammerAndComputers(){
                    intToString(computers[i].YearBuilt).c_str());
 }
 }
+
+void ppInterface::displayComputerAndProgrammers(){
+     int computerID;
+     cout << "Display connection for computer with ID " << endl;  // TODO ENDURORÐA
+     cin >> computerID;
+     Computer computer = pcservice.getComputer(computerID);
+
+        printf("%-4i : %-40s - %-45s - %-4s - %-4s\n",
+            computer.computerID,
+            computer.Name.c_str(),
+            computer.Type.c_str(),
+            intToYesNo(computer.WasItBuilt).c_str(),
+            intToString(computer.YearBuilt).c_str());
+
+
+    vector<Programmer> programmers = pcservice.getProgrammers(computerID);
+     for (unsigned int i = 0; i<programmers.size();  i++) {
+         printf("%-4i : %-40s  %-8s  %-4i  %-4s\n",
+              programmers[i].programmerID,
+              programmers[i].Name.c_str(),
+              genderToString(programmers[i].Gender).c_str(),
+              programmers[i].BirthYear,
+              intToString(programmers[i].DeadYear).c_str());
+}
+}
+
+
