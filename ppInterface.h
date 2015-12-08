@@ -19,7 +19,7 @@ class ppInterface
         void computersMenu();
         void sortComputersMenu();
 
-        void proANDcomMenu();
+        void proAndComMenu();
 
           // ask user for search string and displayes all programmers that are in the search criteria
         void searchProgrammers();
@@ -42,7 +42,9 @@ class ppInterface
         void deleteComputer();
 
         void connectProgrammerToComputer();
+        void displayAll();
 
+        void displayAllConnections();
 
         pcService pcservice;
 };

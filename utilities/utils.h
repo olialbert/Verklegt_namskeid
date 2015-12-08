@@ -27,6 +27,8 @@ namespace utils {
 
     int yesNoToInt(string yesNo);
     string intToYesNo(int i);
+
+    string YearOfDeathToString(int year);
 }
 
 #endif // UTILS_H

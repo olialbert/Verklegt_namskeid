@@ -104,7 +104,12 @@ namespace utils {
             return "No";
         }
     }
-
+    string YearOfDeathToString(int year) {
+        if (year==0)
+            return "Alive";
+        else
+            return intToString(year);
+    }
 
  }
 

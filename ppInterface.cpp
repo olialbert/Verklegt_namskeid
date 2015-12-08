@@ -42,7 +42,7 @@ int ppInterface::mainMenu(){
             computersMenu();
             break;
         case '3':
-            proANDcomMenu();
+            proAndComMenu();
             break;
         default:
             if(choise != '9')
@@ -277,7 +277,7 @@ void ppInterface::sortComputersMenu(){
     } while(choose != '1' && choose != '2' && choose != '3' && choose != '4' && choose != '5' && choose != '6' && choose != '7' && choose != '8');
 }
 
-void ppInterface::proANDcomMenu() {
+void ppInterface::proAndComMenu() {
     char choose;
     string s;
 
@@ -289,6 +289,7 @@ void ppInterface::proANDcomMenu() {
         cout << "1. Display pro to computer   " << endl;
         cout << "2. Display computer to pro " << endl;
         cout << "3. Connect Computer an Programmer" << endl;
+        cout << "4. display all connections" << endl;
         cout << "9. Back to Main Menu " << endl;
         cout << endl;
         cout << "Action number: ";
@@ -303,9 +304,11 @@ void ppInterface::proANDcomMenu() {
         case '2':
             displayComputerAndProgrammers();
             break;
-
         case '3':
             connectProgrammerToComputer();
+            break;
+        case '4':
+            displayAllConnections();
             break;
         default:
             if(choose != '9')
@@ -334,20 +337,24 @@ void ppInterface::searchComputers(){
 
 void ppInterface::displayProgrammers(string search) {
     vector<Programmer> programmers = pcservice.findProgrammers(search);
+    printf("%-4s  %-40s  %-8s  %-4s  %-4s\n", "ID","Name","Gender","BirthYear","Year of Death");
+    printf("------------------------------------------------------------------------------------------------------------------\n");
      for (unsigned int i = 0; i<programmers.size();  i++) {
-            printf("%-4i : %-40s ---- %-8s -- %-4i -- %-4s\n",
+            printf("%-4i  %-40s  %-8s  %-9i  %-4s\n",
                    programmers[i].programmerID,
                    programmers[i].Name.c_str(),
                    genderToString(programmers[i].Gender).c_str(),
                    programmers[i].BirthYear,
-                   intToString(programmers[i].DeadYear).c_str());
+                   YearOfDeathToString(programmers[i].DeadYear).c_str());
     }
 }
 
 void ppInterface::displayComputers(string search) {
     vector<Computer> computers = pcservice.findComputers(search);
+    printf("%-4s  %-40s  %-45s  %-4s  %-4s\n", "ID","Name","Type","Built","Year");
+    printf("------------------------------------------------------------------------------------------------------------------\n");
      for (unsigned int i = 0; i<computers.size();  i++) {
-            printf("%-4i : %-40s - %-45s - %-4s - %-4s\n",
+            printf("%-4i  %-40s  %-45s  %-4s  %-4s\n",
                    computers[i].computerID,
                    computers[i].Name.c_str(),
                    computers[i].Type.c_str(),
@@ -370,35 +377,24 @@ void ppInterface::addProgrammer() {
     p.Gender = stringToGender(g);
 
     string b;
-    while (stringToInt(b) == 0) {
-        cout << "BirthYear : " ;
-        getline(cin, b);
-        if (stringToInt(b) == 0)
-            cout << "Invalid year" << endl;
+    cout << "BirthYear : " ;
+    getline(cin, b);
+    if (stringToInt(b) <= 1500 ){
+        cout << endl;
+        cout << "Invalid BirthYear, programmer was not added !" << endl;
+        return;
     }
-
-
-
+    else
+    {
+        p.BirthYear = stringToInt(b);
+    }
 
     string d;
     cout << "Year of Death     : " ;
     getline(cin, d);
     p.DeadYear = stringToInt(d);
 
-    //pcservice.addProgrammer(p);
-
-    if (stringToInt(b) < 1500 || stringToInt(b) > PRESENT_YEAR){
-        cout << endl;
-        cout << "Invalid BirthYear, programmer was not added !" << endl;
-    }else{
-        p.BirthYear = stringToInt(b);
-    }
-    if (p.DeadYear < 1500 || p.DeadYear > PRESENT_YEAR){
-        cout << endl;
-        cout << "Invalid year of death, programmer was not added !" << endl;
-    }else {
-        pcservice.addProgrammer(p);
-    }
+     pcservice.addProgrammer(p);
 }
 
 
@@ -422,11 +418,12 @@ void ppInterface::addComputer() {
     string yb;
     getline(cin, yb);
     c.YearBuilt = stringToInt(yb);
-    if (c.YearBuilt < 1500 || c.YearBuilt > PRESENT_YEAR){
+    if (c.YearBuilt <= 1500){
         cout << endl;
         cout << "Invalid year, computer was not added" << endl;
     }
-    else pcservice.addComputer(c);
+    else
+        pcservice.addComputer(c);
 }
 
 void ppInterface::deleteProgrammer(){
@@ -457,8 +454,9 @@ void ppInterface::connectProgrammerToComputer(){  //adding connection
 
 void ppInterface::displayProgrammerAndComputers(){
      int programmerID;
-     cout << "Display connection for programmer with ID " << endl;  // TODO ENDURORÐA
+     cout << "Display connection for programmer with ID :" ;
      cin >> programmerID;
+     cout << endl;
      Programmer programmer = pcservice.getProgrammer(programmerID);
 
             printf("%-4i : %-40s  %-8s  %-4i  %-4s\n",
@@ -477,16 +475,17 @@ void ppInterface::displayProgrammerAndComputers(){
                    computers[i].Type.c_str(),
                    intToYesNo(computers[i].WasItBuilt).c_str(),
                    intToString(computers[i].YearBuilt).c_str());
-}
+    }
 }
 
 void ppInterface::displayComputerAndProgrammers(){
      int computerID;
-     cout << "Display connection for computer with ID " << endl;  // TODO ENDURORÐA
+     cout << "Display connection for computer with ID : " ;  // TODO ENDURORÐA
      cin >> computerID;
+     cout << endl;
      Computer computer = pcservice.getComputer(computerID);
 
-        printf("%-4i : %-40s - %-45s - %-4s - %-4s\n",
+        printf("%-4i : %-40s | %-30s | %-4s | %-4s\n",
             computer.computerID,
             computer.Name.c_str(),
             computer.Type.c_str(),
@@ -496,13 +495,59 @@ void ppInterface::displayComputerAndProgrammers(){
 
     vector<Programmer> programmers = pcservice.getProgrammers(computerID);
      for (unsigned int i = 0; i<programmers.size();  i++) {
-         printf("%-4i : %-40s  %-8s  %-4i  %-4s\n",
+         printf("%-4i : %-40s | %-30s | %-4i | %-4s\n",
               programmers[i].programmerID,
               programmers[i].Name.c_str(),
               genderToString(programmers[i].Gender).c_str(),
               programmers[i].BirthYear,
               intToString(programmers[i].DeadYear).c_str());
+    }
+
+}
+
+void ppInterface::displayAllConnections() {
+    vector<Programmer> programmers = pcservice.findProgrammers("");
+    vector<Computer> computers;
+    cout << "ID   Programmername                  <->  ID    Computername                    Typeanical computer" << endl;
+    cout << "----------------------------------------------------------------------------------------------------" << endl;
+     for (unsigned int i = 0; i<programmers.size();  i++) {
+          /*printf("%-4i : %-40s\n",
+                   programmers[i].programmerID,
+                   programmers[i].Name.c_str());
+                   /*,
+                   genderToString(programmers[i].Gender).c_str(),
+                   programmers[i].BirthYear,
+                   intToString(programmers[i].DeadYear).c_str()*/
+
+            computers = pcservice.getComputers(programmers[i].programmerID);
+             for (unsigned int c = 0; c<computers.size();  c++) {
+                    printf("%-4i %-30s  <->  %-4i  %-30s  %-20s\n",
+                           programmers[i].programmerID,
+                           programmers[i].Name.c_str(),
+                           computers[c].computerID,
+                           computers[c].Name.c_str(),
+                           computers[c].Type.c_str());
+                            /*,
+                           intToYesNo(computers[c].WasItBuilt).c_str(),
+                           intToString(computers[c].YearBuilt).c_str()*/
+        }
+
+     }
+
+}
+
+/*
+void ppInterface::displayAll(){
+    vector<Computer> computers = pcservice.getComputers(programmerID);
+    for (unsigned int i = 0; i<computers.size();  i++) {
+       printf("%-4i : %-40s - %-45s - %-4s - %-4s\n",
+              computers[i].computerID,
+              computers[i].Name.c_str(),
+              computers[i].Type.c_str(),
+              intToYesNo(computers[i].WasItBuilt).c_str(),
+              intToString(computers[i].YearBuilt).c_str());
 }
 }
+*/
 
 

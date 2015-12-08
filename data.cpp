@@ -24,7 +24,6 @@ Data::Data() {
     mydb.setDatabaseName(dbName);
     mydb.open();
 
-    //loadDB("Name");
 }
 
 
@@ -113,8 +112,6 @@ void Data::deleteProgrammer(int programmerID){
 
      sql = string("DELETE FROM Programmers WHERE ProgrammerID=") +intToString(programmerID);
     query.exec(sql.c_str());
-
-
 }
 
 /*void Data::updateProgrammer(Programmer p){
@@ -225,4 +222,3 @@ void Data::deleteComputer(int computerID) {
 void Data::orderComputersBy(string order) {
     computersOrderBy = order;
 }
-
