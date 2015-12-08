@@ -12,13 +12,15 @@ class ppInterface
         int mainMenu();
 
     private:
-            //Programmers Menues
+            //Menu for Programmers
         void programmersMenu();
         void sortProgrammersMenu();
 
+            //Menu for Computers
         void computersMenu();
         void sortComputersMenu();
 
+            // Menu for programmers and computers
         void proAndComMenu();
 
           // ask user for search string and displayes all programmers that are in the search criteria
@@ -41,9 +43,11 @@ class ppInterface
         void deleteProgrammer();
         void deleteComputer();
 
+          //adding connection from the programmer to computer
         void connectProgrammerToComputer();
         void displayAll();
 
+          // displaying all the connections
         void displayAllConnections();
 
         pcService pcservice;

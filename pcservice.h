@@ -13,16 +13,18 @@ class pcService
     public:
         pcService();
 
-        // ********* PROGRAMMERS *************************************************************************
+// ********* PROGRAMMERS *************************************************************************
 
             // input : programmerId - id of the programmer
             // returns : programmer with id programmerId
         Programmer getProgrammer(int programmerId);
 
-            //
+            // input : programmerId - finds the id of the programmer
+            // returns : programmer with id programmerId
         vector<Programmer> findProgrammers(string search);
 
-            //
+            // input : programmerId - finds the id of the programmer and computerID
+            // returns : programmer with id connecting to a computer
         vector<Programmer> getProgrammers(int computerId);
 
             // input : p - programmer to be added
@@ -34,21 +36,26 @@ class pcService
         void deleteProgrammer(int programmerId);
         void updateProgrammer(int programmerId);
 
-             // input : order - sort order
+            // input : order - sort order
             // sets the display order for the selected programmers
         void orderProgrammersBy(string order);
 
+            // input : order - sort order
+            // sets the display order for the selected programmers
         void connectProgrammerToComputer(int computerID, int programmerID);
 
-        // ********* COMPUTERS *************************************************************************
+// ********* COMPUTERS *************************************************************************
 
-            //
+            // input : computerId - id of the computer
+            // returns : computer with id computerId
         Computer getComputer(int id);
 
-            //
+            // input : computerId - finds the id of the computer
+            // returns : computer with id coputerId
         vector<Computer> findComputers(string search);
 
-            //
+            // input : programmerId - finds the id of the programmer and computerID
+            // returns : programmer with id connecting to a computer
         vector<Computer> getComputers(int programmerID);
 
             // input : c - computer to be added

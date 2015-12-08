@@ -10,8 +10,7 @@ using namespace std;
 using namespace constants;
 
 
-ppInterface::ppInterface()
-{
+ppInterface::ppInterface(){
 }
 
 int ppInterface::mainMenu(){
@@ -20,13 +19,13 @@ int ppInterface::mainMenu(){
 
     do{
         cout << endl;
-        cout << "*******  MAIN MENU  *********************** " << endl;
+        cout << "********************  MAIN MENU  ******************** " << endl;
         cout << "Please choose one of the fallowing actions: " << endl;
         cout << endl;
-        cout << "1. PROGRAMMERS   " << endl;
-        cout << "2. COMPUTERS     " << endl;
-        cout << "3. PROGRAMMERS AND COMPUTERS" << endl;
-        cout << "9. QUIT          " << endl;
+        cout << "1. Programmers             " << endl;
+        cout << "2. Computers               " << endl;
+        cout << "3. Programmers and Computer" << endl;
+        cout << "9. Quit                    " << endl;
         cout << endl;
         cout << "Action number:   ";
         cin >> choise;
@@ -53,16 +52,13 @@ int ppInterface::mainMenu(){
     return 0;
 }
 
-
 void ppInterface::programmersMenu() {
     char choose;
     string s;
 
-
-
     do{
         cout << endl;
-        cout << "*******  PROGRAMMERS MENU  **************** " << endl;
+        cout << "***************  PROGRAMMERS MENU  ****************** " << endl;
         cout << "Please choose one of the following actions: " << endl;
         cout << endl;
         cout << "1. Display             " << endl;
@@ -71,7 +67,7 @@ void ppInterface::programmersMenu() {
         cout << "4. Remove              " << endl;
         cout << "5. Display order       " << endl;
         cout << "6. Connect to computer " << endl;
-        cout << "7. displ conn " << endl;          //TODO
+        cout << "7. display connection " << endl;          //TODO
         cout << "9. Back to Main Menu   " << endl;
         cout << endl;
         cout << "Action number: ";
@@ -92,33 +88,33 @@ void ppInterface::programmersMenu() {
         case '4':
            displayProgrammers("");
            deleteProgrammer();
-            break;
+           break;
         case '5':
-            sortProgrammersMenu();
-            break;
+           sortProgrammersMenu();
+           break;
         case '6':
-            connectProgrammerToComputer();
-            break;
+           connectProgrammerToComputer();
+           break;
         case '7':
-            displayProgrammerAndComputers();
-            break;
+           displayProgrammerAndComputers();
+           break;
         default:
-            if(choose != '9')
-                cout << "Invalid choice" << endl;
-            break;
+           if(choose != '9')
+               cout << "Invalid choice" << endl;
+           break;
         }
     } while(choose != '9');
 }
 
 void ppInterface::sortProgrammersMenu() {
-    char choose;  // breyta fyrir val á aðgerð
+    char choose;
     string s;
 
     do{
         cout << endl;
-        cout << "***********  PROGRAMMERS DISPLAY MENU  ******** " << endl;
+        cout << "**************  PROGRAMMERS DISPLAY MENU  *********** " << endl;
         cout << "Please choose one of the following actions: " << endl;
-        cout << "Order programmers by :" << endl;
+        cout << "Order programmers by :            " << endl;
         cout << endl;
         cout << "1. Name ascending order           " << endl;
         cout << "2. Name descending order          " << endl;
@@ -129,7 +125,7 @@ void ppInterface::sortProgrammersMenu() {
         cout << "7. Year of death ascending order  " << endl;
         cout << "8. Year of death descending order " << endl;
         cout << endl;
-        cout << "Choose Programmers sorting : ";
+        cout << "Choose Programmers sorting :      ";
         cin >> choose;
         getline(cin, s);
 
@@ -176,7 +172,7 @@ void ppInterface::computersMenu(){
 
     do{
         cout << endl;
-        cout << "*******  COMPUTERS MENU  ****************** " << endl;
+        cout << "**************  COMPUTERS MENU  ********************* " << endl;
         cout << "Please choose one of the following actions: " << endl;
         cout << endl;
         cout << "1. Display           " << endl;
@@ -214,16 +210,15 @@ void ppInterface::computersMenu(){
             break;
         }
     } while(choose != '9');
-
 }
 
 void ppInterface::sortComputersMenu(){
-    char choose;  // breyta fyrir val á aðgerð
+    char choose;
     string s;
 
     do{
         cout << endl;
-        cout << "*******  COMPUTERS DISPLAY MENU  ********** " << endl;
+        cout << "*************  COMPUTERS DISPLAY MENU  ************** " << endl;
         cout << "Please choose one of the following actions: " << endl;
         cout << "Order computers by :" << endl;
         cout << endl;
@@ -283,14 +278,14 @@ void ppInterface::proAndComMenu() {
 
     do{
         cout << endl;
-        cout << "*******  PROGRAMMERS AND COMPUTERS MENU  ****************** " << endl;
+        cout << "******  PROGRAMMERS AND COMPUTERS MENU  ************* " << endl;
         cout << "Please choose one of the following actions: " << endl;
         cout << endl;
-        cout << "1. Display pro to computer   " << endl;
-        cout << "2. Display computer to pro " << endl;
-        cout << "3. Connect Computer an Programmer" << endl;
-        cout << "4. display all connections" << endl;
-        cout << "9. Back to Main Menu " << endl;
+        cout << "1. Display pro to computer                  " << endl;
+        cout << "2. Display computer to pro                  " << endl;
+        cout << "3. Connect Computer an Programmer           " << endl;
+        cout << "4. display all connections                  " << endl;
+        cout << "9. Back to Main Menu                        " << endl;
         cout << endl;
         cout << "Action number: ";
         cin >> choose;
@@ -318,7 +313,6 @@ void ppInterface::proAndComMenu() {
        }while(choose != '9');
 }
 
-
 void ppInterface::searchProgrammers() {
     string search;
     cout << "Search for : ";
@@ -332,8 +326,6 @@ void ppInterface::searchComputers(){
     cin >> search;
     displayComputers(search);
 }
-
-
 
 void ppInterface::displayProgrammers(string search) {
     vector<Programmer> programmers = pcservice.findProgrammers(search);
@@ -363,7 +355,6 @@ void ppInterface::displayComputers(string search) {
     }
 }
 
-
 void ppInterface::addProgrammer() {
 
     Programmer p;
@@ -384,8 +375,7 @@ void ppInterface::addProgrammer() {
         cout << "Invalid BirthYear, programmer was not added !" << endl;
         return;
     }
-    else
-    {
+    else{
         p.BirthYear = stringToInt(b);
     }
 
@@ -394,7 +384,7 @@ void ppInterface::addProgrammer() {
     getline(cin, d);
     p.DeadYear = stringToInt(d);
 
-     pcservice.addProgrammer(p);
+    pcservice.addProgrammer(p);
 }
 
 
@@ -409,7 +399,7 @@ void ppInterface::addComputer() {
     getline(cin, c.Type);
 
 
-    cout << "Was it built (YES/NO)? : " ;
+    cout << "Was it built (Y/N)? : " ;
     string wb;
     getline(cin, wb);
     c.WasItBuilt = yesNoToInt(wb);
@@ -440,13 +430,13 @@ void ppInterface::deleteComputer(){
     pcservice.deleteComputer(computerID);
 }
 
-void ppInterface::connectProgrammerToComputer(){  //adding connection
+void ppInterface::connectProgrammerToComputer(){
     int programmerID;
-    cout << "Connect the fallowing ID's ";  //TODO :ATH endurorða
-    cout << "Programmer with ID: "; //TODO ENDURORÐA
+    cout << "Connect to the following ID's ";
+    cout << "Programmers ID: ";
     cin >> programmerID;
     int computerID;
-    cout << "Computer with ID: "; //TODO ENDURORÐA
+    cout << "Computers ID: ";
     cin >> computerID;
 
     pcservice.connectProgrammerToComputer(computerID, programmerID);
@@ -466,7 +456,6 @@ void ppInterface::displayProgrammerAndComputers(){
                    programmer.BirthYear,
                    intToString(programmer.DeadYear).c_str());
 
-
     vector<Computer> computers = pcservice.getComputers(programmerID);
      for (unsigned int i = 0; i<computers.size();  i++) {
             printf("%-4i : %-40s - %-45s - %-4s - %-4s\n",
@@ -480,7 +469,7 @@ void ppInterface::displayProgrammerAndComputers(){
 
 void ppInterface::displayComputerAndProgrammers(){
      int computerID;
-     cout << "Display connection for computer with ID : " ;  // TODO ENDURORÐA
+     cout << "Displaying the connection for computers with ID : " ;
      cin >> computerID;
      cout << endl;
      Computer computer = pcservice.getComputer(computerID);
@@ -502,7 +491,6 @@ void ppInterface::displayComputerAndProgrammers(){
               programmers[i].BirthYear,
               intToString(programmers[i].DeadYear).c_str());
     }
-
 }
 
 void ppInterface::displayAllConnections() {

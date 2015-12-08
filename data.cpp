@@ -23,9 +23,7 @@ Data::Data() {
     QString dbName =  QString(DATABASE_FILE_NAME.c_str());
     mydb.setDatabaseName(dbName);
     mydb.open();
-
 }
-
 
 Data::~Data() {
     mydb.close();
@@ -41,8 +39,7 @@ Programmer Data::getProgrammer(int programmerID){
     Programmer p;
 
 
-    if(query.next())
-    {
+    if(query.next()){
         p.programmerID = stringToInt(query.value("programmerID").toString().toStdString());
         p.Name = query.value("Name").toString().toStdString();
         p.Gender = stringToGender(query.value("Gender").toString().toStdString());

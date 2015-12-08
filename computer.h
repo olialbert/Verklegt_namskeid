@@ -4,6 +4,7 @@
 using namespace std;
 
 // stuct that contains information about programmer
+
 struct Computer {
     int computerID;
     string Name;

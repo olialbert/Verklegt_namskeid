@@ -4,9 +4,9 @@
 #include <string>
 
 
-/**
- * This file contains constants that this application uses
- */
+
+// This file contains constants that this application uses
+
 
 namespace constants {
 

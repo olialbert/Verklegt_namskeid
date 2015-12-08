@@ -8,9 +8,9 @@
 
 using namespace std;
 
-/**
- * This file contains reusable utility functions used throughout the application
- */
+
+// This file contains reusable utility functions used throughout the application
+
 
 namespace utils {    
     vector<string> splitString(string line, char delimeter);

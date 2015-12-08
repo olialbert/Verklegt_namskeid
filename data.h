@@ -15,56 +15,63 @@ class Data
         Data();
         ~Data();
 
-        // ********* PROGRAMMERS *************************************************************************
+// ********* PROGRAMMERS *************************************************************************
 
-             // input : programmerId - id of the programmer
-            // returns : programmer with id programmerId
+           // input : programmerId - id of the programmer
+           // returns : programmer with id programmerId
         Programmer getProgrammer(int programmerID);
 
-            // ToDo add comment ...
+           // input : sets programmersID to vektor
+           // returns : programmersID from database to vector
         vector<Programmer> findProgrammers(string search);
 
-            //
+           // input : gets programmersID to vektor
+           // returns :  get the connection between programmers and computers
         vector<Programmer> getProgrammers(int computerID);
 
-            // input : p - programmer to be added
-            // programmer p as been added to the programmers table
+           // input : p - programmer to be added
+           // programmer p as been added to the programmers table
         void addProgrammer(Programmer p);
 
-            // input : programmerId - Id of the programmer to be deleted
-            // programmer with Id, programerId has been deleted from the programmers table
+           // input : programmerId - Id of the programmer to be deleted
+           // programmer with Id, programerId has been deleted from the programmers table
         void deleteProgrammer(int programmerID);
 
-            //
+
         //void updateProgrammer(int programmerId);
 
-             // input : order - sort order
-            // sets the display order for the selected programmers
+           // input : order - sort order
+           // sets the display order for the selected programmers
         void orderProgrammersBy(string order);
 
+           // input : computerID and programmerID
+           // returns : the connection between the programmer and the computer
         void connectProgrammerToComputer(int computerID, int programmerID);
 
-        // ********* COMPUTERS *************************************************************************
+// ********* COMPUTERS *************************************************************************
 
-            //
+           // input : computerId - id of the computer
+           // returns : computer with id computerId
         Computer getComputer(int computerID);
 
-            //
+           // input : sets computersID to vektor
+           // returns : computersID information from database to vector
         vector<Computer> findComputers(string search);
 
-            //
+           // input : gets computersID to vektor
+           // returns :  gets the connection between programmers and computers
         vector<Computer> getComputers(int programmerID);
 
-            // input : c - computer to be added
-            // computer c as been added to the computers table
+           // input : c - computer to be added
+           // computer c as been added to the computers table
         void addComputer(Computer c);
 
-            // input : computerId - Id of the computer to be deleted
-            // computer with Id, computerId has been deleted from the computers table
+           // input : computerId - Id of the computer to be deleted
+           // computer with Id, computerId has been deleted from the computers table
         void deleteComputer(int computerID);
 
-            // input : order - sort order
-            // sets the display order for the selected computers
+           // input : order - sort order
+           // sets the display order for the selected computers
         void orderComputersBy(string order);
 
     private:
