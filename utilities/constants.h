@@ -30,6 +30,8 @@ namespace constants {
     const string COMPUTERS_ORDER_YEARBUILT = "Yearbuilt, Name";
     const string COMPUTERS_ORDER_YEARBUILT_DESC = "Yearbuilt desc, Name";
 
+    const int PRESENT_YEAR = 2015;
+
 
 }
 

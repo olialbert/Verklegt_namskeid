@@ -214,9 +214,9 @@ void Data::addComputer(Computer c) {
     // computer with Id, computerId has been deleted from the computers table
 void Data::deleteComputer(int computerID) {
     QSqlQuery query;
-    sql = string("DELETE FROM BestOfBothWorlds WHERE computerID=") +intToString(computerID);
+    string sql = string("DELETE FROM BestOfBothWorlds WHERE computerID=") +intToString(computerID);
     query.exec(sql.c_str());
-    string sql = string("DELETE FROM Computers WHERE computerID=") +intToString(computerID);
+     sql = string("DELETE FROM Computers WHERE computerID=") +intToString(computerID);
     query.exec(sql.c_str());
 }
 

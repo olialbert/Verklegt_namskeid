@@ -376,15 +376,31 @@ void ppInterface::addProgrammer() {
         if (stringToInt(b) == 0)
             cout << "Invalid year" << endl;
     }
-    p.BirthYear = stringToInt(b);
+
+
+
 
     string d;
     cout << "Year of Death     : " ;
     getline(cin, d);
     p.DeadYear = stringToInt(d);
 
-    pcservice.addProgrammer(p);
+    //pcservice.addProgrammer(p);
+
+    if (stringToInt(b) < 1500 || stringToInt(b) > PRESENT_YEAR){
+        cout << endl;
+        cout << "Invalid BirthYear, programmer was not added !" << endl;
+    }else{
+        p.BirthYear = stringToInt(b);
+    }
+    if (p.DeadYear < 1500 || p.DeadYear > PRESENT_YEAR){
+        cout << endl;
+        cout << "Invalid year of death, programmer was not added !" << endl;
+    }else {
+        pcservice.addProgrammer(p);
+    }
 }
+
 
 void ppInterface::addComputer() {
 
@@ -406,8 +422,11 @@ void ppInterface::addComputer() {
     string yb;
     getline(cin, yb);
     c.YearBuilt = stringToInt(yb);
-
-    pcservice.addComputer(c);
+    if (c.YearBuilt < 1500 || c.YearBuilt > PRESENT_YEAR){
+        cout << endl;
+        cout << "Invalid year, computer was not added" << endl;
+    }
+    else pcservice.addComputer(c);
 }
 
 void ppInterface::deleteProgrammer(){
