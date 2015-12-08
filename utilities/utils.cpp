@@ -5,7 +5,7 @@
 using namespace std;
 
 namespace utils {
-    vector<string> splitString(string line, char delimeter)
+    /*vector<string> splitString(string line, char delimeter)  haegt ad taka tetta ut ?????
     {
         vector<string> result;
 
@@ -37,7 +37,7 @@ namespace utils {
         }
 
         return result;
-    }
+    }*/
 
     int stringToInt(string str)
     {
