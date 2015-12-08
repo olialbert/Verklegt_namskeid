@@ -19,6 +19,8 @@ class ppInterface
         void computersMenu();
         void sortComputersMenu();
 
+        void proANDcomMenu();
+
           // ask user for search string and displayes all programmers that are in the search criteria
         void searchProgrammers();
         void searchComputers();

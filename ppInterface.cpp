@@ -25,6 +25,7 @@ int ppInterface::mainMenu(){
         cout << endl;
         cout << "1. PROGRAMMERS   " << endl;
         cout << "2. COMPUTERS     " << endl;
+        cout << "3. PROGRAMMERS AND COMPUTERS" << endl;
         cout << "9. QUIT          " << endl;
         cout << endl;
         cout << "Action number:   ";
@@ -39,6 +40,9 @@ int ppInterface::mainMenu(){
             break;
         case '2':
             computersMenu();
+            break;
+        case '3':
+            proANDcomMenu();
             break;
         default:
             if(choise != '9')
@@ -272,6 +276,37 @@ void ppInterface::sortComputersMenu(){
         }
     } while(choose != '1' && choose != '2' && choose != '3' && choose != '4' && choose != '5' && choose != '6' && choose != '7' && choose != '8');
 }
+
+void ppInterface::proANDcomMenu() {
+    char choose;
+    string s;
+
+    do{
+        cout << endl;
+        cout << "*******  PROGRAMMERS AND COMPUTERS MENU  ****************** " << endl;
+        cout << "Please choose one of the following actions: " << endl;
+        cout << endl;
+        cout << "1. Display           " << endl;
+        cout << "9. Back to Main Menu " << endl;
+        cout << endl;
+        cout << "Action number: ";
+        cin >> choose;
+        getline(cin, s);
+        cout << endl;
+
+        switch (choose){
+        case '1':
+            pcservice.orderComputersBy(COMPUTERS_ORDER_NAME);
+            displayComputers("");
+            break;
+        default:
+            if(choose != '9')
+                cout << "Invalid choice" << endl;
+            break;
+        }
+       }while(choose != '9');
+}
+
 
 void ppInterface::searchProgrammers() {
     string search;
