@@ -64,11 +64,9 @@ void ppInterface::programmersMenu() {
         cout << "1. Display             " << endl;
         cout << "2. Display order       " << endl;
         cout << "3. Add                 " << endl;
-
-
         cout << "4. Edit                " << endl;
         cout << "5. Remove              " << endl;
-        cout << "6. Display order       " << endl;
+        cout << "6. Search              " << endl;
         cout << "9. Back to Main Menu   " << endl;
         cout << endl;
         cout << "Action number: ";
@@ -90,10 +88,11 @@ void ppInterface::programmersMenu() {
             updateProgrammer();
             break;
         case '5':
-           searchProgrammers();
+            displayProgrammers("");
+            deleteProgrammer();
             break;
         case '6':
-            sortProgrammersMenu();
+            searchProgrammers();
             break;
         default:
             if(choose != '9')
@@ -484,6 +483,8 @@ void ppInterface::deleteProgrammer(){
     cout << "Delete programmer with ID: ";
     cin >> programmerID;
     pcservice.deleteProgrammer(programmerID);
+    cout << endl;
+    cout << "Programmer has been succsessfully removed!" << endl;
 }
 
 void ppInterface::deleteComputer(){
@@ -491,6 +492,8 @@ void ppInterface::deleteComputer(){
     cout << "Delete computer with ID: ";
     cin >> computerID;
     pcservice.deleteComputer(computerID);
+    cout << endl;
+    cout << "Computer has been succsessfully removed!" << endl;
 }
 
 void ppInterface::connectProgrammerToComputer(){
