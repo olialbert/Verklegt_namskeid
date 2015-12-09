@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 
-// stuct that contains information about programmer
+// struct that contains information about programmer
 
 struct Programmer {
     int programmerID;

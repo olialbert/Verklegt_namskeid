@@ -383,6 +383,9 @@ void ppInterface::addProgrammer() {
     p.DeadYear = stringToInt(d);
 
     pcservice.addProgrammer(p);
+    cout << endl;
+    cout << "Programmer has been succsessfully Added!" << endl;
+
 }
 
 
@@ -412,6 +415,8 @@ void ppInterface::addComputer() {
         return;
     }
         pcservice.addComputer(c);
+        cout << endl;
+        cout << "Computer has been succsessfully Added!" << endl;
 }
 
 void ppInterface::updateProgrammer() {
