@@ -174,8 +174,9 @@ void ppInterface::computersMenu(){
         cout << "1. Display           " << endl;
         cout << "2. Search            " << endl;
         cout << "3. Add               " << endl;
-        cout << "4. Delete            " << endl;
-        cout << "5. Display order     " << endl;
+        cout << "4. Edit              " << endl;
+        cout << "5. Delete            " << endl;
+        cout << "6. Display order     " << endl;
         cout << "9. Back to Main Menu " << endl;
         cout << endl;
         cout << "Action number: ";
@@ -194,10 +195,13 @@ void ppInterface::computersMenu(){
             addComputer();
             break;
         case '4':
+            updateComputer();
+            break;
+        case '5':
            displayComputers("");
            deleteComputer();
             break;
-        case '5':
+        case '6':
             sortComputersMenu();
             break;
         default:
@@ -355,16 +359,16 @@ void ppInterface::addProgrammer() {
 
     Programmer p;
 
-    cout << "Name     : " ;
+    cout << "Name             : " ;
     getline(cin, p.Name);
 
     string g;
-    cout << "Gender (M/F)  : " ;
+    cout << "Gender (M/F)     : " ;
     getline(cin, g);
     p.Gender = stringToGender(g);
 
     string b;
-    cout << "BirthYear : " ;
+    cout << "BirthYear        : " ;
     getline(cin, b);
     if (stringToInt(b) <= 1500 ){
         cout << endl;
@@ -386,10 +390,10 @@ void ppInterface::addComputer() {
 
     Computer c;
 
-    cout << "Name                   : " ;
+    cout << "Name                : " ;
     getline(cin, c.Name);
 
-    cout << "Type                   : " ;
+    cout << "Type                : " ;
     getline(cin, c.Type);
 
 
@@ -398,7 +402,7 @@ void ppInterface::addComputer() {
     getline(cin, wb);
     c.WasItBuilt = yesNoToInt(wb);
 
-    cout << "Year built    : " ;
+    cout << "Year built          : " ;
     string yb;
     getline(cin, yb);
     c.YearBuilt = stringToInt(yb);
@@ -450,32 +454,43 @@ void ppInterface::updateProgrammer() {
 }
 
 void ppInterface::updateComputer() {
+    string computerID;
+    cout << "Edit programmer with ID number : ";
+    getline(cin, computerID);
 
-    Computer c;
+    Computer c = pcservice.getComputer(stringToInt(computerID));
 
-    cout << "Name : " ;
-    getline(cin, c.Name);
-
-    cout << "Type  : " ;
-    getline(cin, c.Type);
-
-
-    cout << "Was it built (YES/NO)? : " ;
-    string wb;
-    getline(cin, wb);
-    c.WasItBuilt = yesNoToInt(wb);
-
-    cout << "Year built : " ;
-    string yb;
-    getline(cin, yb);
-    c.YearBuilt = stringToInt(yb);
-    if (c.YearBuilt <= 1500){
-        cout << endl;
-        cout << "Invalid year, computer was not added" << endl;
+    if(c.computerID <= 0){
+        cout << "Invalid computer ID!" << endl;
         return;
     }
 
-    //pcservice.addComputer(c);
+    string sInput;
+    cout << "Name (" << c.Name << ") : " ;
+    getline(cin, sInput);
+    if (sInput.length()>0) {
+        c.Name = sInput;
+    }
+
+    cout << "Type(" << c.Type << ") : " ;
+    getline(cin, sInput);
+    if (sInput.length()>0) {
+        c.Type = sInput;
+    }
+
+    cout << "Was it built (" << intToYesNo(c.WasItBuilt) << ") : " ;
+    getline(cin, sInput);
+    if (sInput.length()>0) {
+        c.WasItBuilt = yesNoToInt(sInput);
+    }
+
+    cout << "Year built (" << intToString(c.YearBuilt) << ") : " ;
+    getline(cin, sInput);
+    if (stringToInt(sInput) > 1500 ){
+        c.YearBuilt = stringToInt(sInput);
+    }
+
+    pcservice.updateComputer(c);
 }
 
 void ppInterface::deleteProgrammer(){

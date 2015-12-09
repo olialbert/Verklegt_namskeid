@@ -60,7 +60,6 @@ vector<Programmer> Data::findProgrammers(string search){
     if(year>0)
         sql+= string (" or birthyear like '%")+ search+ string("%' or deadyear like '%") +search+ string("%' ");
     sql +=  string(" order by ") +programmersOrderBy;
-    //cout << sql << endl;
     query.exec(sql.c_str());
     Programmer p;
     while(query.next())
@@ -136,6 +135,7 @@ Computer Data::getComputer(int computerID) {
     string sql =  string("select * from Computers where computerID=") + intToString(computerID);
     query.exec(sql.c_str());
     Computer c;
+    c.computerID = 0;
 
 
     if(query.next())
@@ -159,7 +159,6 @@ vector<Computer> Data::findComputers(string search) {
     if(year>0)
         sql+= string(" or yearbuilt like '%") +search+ string("%' ");
     sql +=  string(" order by ") +computersOrderBy;
-    //cout << sql << endl;
     query.exec(sql.c_str());
     Computer c;
     while(query.next())
@@ -200,7 +199,6 @@ void Data::addComputer(Computer c) {
     QSqlQuery query;
     string sql = string("insert into Computers(name, type, wasitbuilt, yearbuilt) values('")+c.Name+string("','")+c.Type+string("',")+intToString(c.WasItBuilt)+string(",")+intToString(c.YearBuilt)+string(")");
     query.exec(sql.c_str());
-    cout << sql << endl;
 }
 
 void Data::deleteComputer(int computerID) {
