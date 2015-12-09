@@ -85,6 +85,7 @@ void ppInterface::programmersMenu() {
             addProgrammer();
             break;
         case '4':
+            displayProgrammers("");
             updateProgrammer();
             break;
         case '5':
@@ -195,6 +196,7 @@ void ppInterface::computersMenu(){
             addComputer();
             break;
         case '4':
+            displayComputers("");
             updateComputer();
             break;
         case '5':
