@@ -62,11 +62,11 @@ void ppInterface::programmersMenu() {
         cout << "Please choose one of the following actions: " << endl;
         cout << endl;
         cout << "1. Display             " << endl;
-        cout << "2. Search              " << endl;
+        cout << "2. Display order       " << endl;
         cout << "3. Add                 " << endl;
         cout << "4. Edit                " << endl;
         cout << "5. Remove              " << endl;
-        cout << "6. Display order       " << endl;
+        cout << "6. Search              " << endl;
         cout << "9. Back to Main Menu   " << endl;
         cout << endl;
         cout << "Action number: ";
@@ -79,7 +79,7 @@ void ppInterface::programmersMenu() {
             displayProgrammers("");
             break;
         case '2':
-            searchProgrammers();
+            sortProgrammersMenu();
             break;
         case '3':
             addProgrammer();
@@ -88,11 +88,11 @@ void ppInterface::programmersMenu() {
             updateProgrammer();
             break;
         case '5':
-           displayProgrammers("");
-           deleteProgrammer();
+            displayProgrammers("");
+            deleteProgrammer();
             break;
         case '6':
-            sortProgrammersMenu();
+            searchProgrammers();
             break;
         default:
             if(choose != '9')
@@ -172,11 +172,11 @@ void ppInterface::computersMenu(){
         cout << "Please choose one of the following actions: " << endl;
         cout << endl;
         cout << "1. Display           " << endl;
-        cout << "2. Search            " << endl;
+        cout << "2. Display order     " << endl;
         cout << "3. Add               " << endl;
         cout << "4. Edit              " << endl;
-        cout << "5. Delete            " << endl;
-        cout << "6. Display order     " << endl;
+        cout << "5. Remove            " << endl;
+        cout << "5. Search            " << endl;
         cout << "9. Back to Main Menu " << endl;
         cout << endl;
         cout << "Action number: ";
@@ -189,7 +189,7 @@ void ppInterface::computersMenu(){
             displayComputers("");
             break;
         case '2':
-            searchComputers();
+            sortComputersMenu();
             break;
         case '3':
             addComputer();
@@ -202,7 +202,7 @@ void ppInterface::computersMenu(){
            deleteComputer();
             break;
         case '6':
-            sortComputersMenu();
+            searchComputers();
             break;
         default:
             if(choose != '9')
@@ -281,11 +281,11 @@ void ppInterface::proAndComMenu() {
         cout << "******  PROGRAMMERS AND COMPUTERS MENU  ************* " << endl;
         cout << "Please choose one of the following actions: " << endl;
         cout << endl;
-        cout << "1. Display pro to computer                  " << endl;
-        cout << "2. Display computer to pro                  " << endl;
-        cout << "3. Connect Computer an Programmer           " << endl;
-        cout << "4. display all connections                  " << endl;
-        cout << "9. Back to Main Menu                        " << endl;
+        cout << "1. Find programmers connection to computer        " << endl;
+        cout << "2. Find computers connection to programmer        " << endl;
+        cout << "3. Connect Computers and Programmers              " << endl;
+        cout << "4. display all connections                        " << endl;
+        cout << "9. Back to Main Menu                              " << endl;
         cout << endl;
         cout << "Action number: ";
         cin >> choose;
@@ -498,6 +498,8 @@ void ppInterface::deleteProgrammer(){
     cout << "Delete programmer with ID: ";
     cin >> programmerID;
     pcservice.deleteProgrammer(programmerID);
+    cout << endl;
+    cout << "Programmer has been succsessfully removed!" << endl;
 }
 
 void ppInterface::deleteComputer(){
@@ -505,6 +507,8 @@ void ppInterface::deleteComputer(){
     cout << "Delete computer with ID: ";
     cin >> computerID;
     pcservice.deleteComputer(computerID);
+    cout << endl;
+    cout << "Computer has been succsessfully removed!" << endl;
 }
 
 void ppInterface::connectProgrammerToComputer(){
