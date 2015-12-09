@@ -16,15 +16,15 @@ class pcService
 // ********* PROGRAMMERS *************************************************************************
 
             // input : programmerId - id of the programmer
-            // returns : programmer with id programmerId
+            // returns : programmerinfo  for programmer with id programmerId
         Programmer getProgrammer(int programmerId);
 
-            // input : programmerId - finds the id of the programmer
-            // returns : programmer with id programmerId
+            // input : searc string
+            // returns : vector of programmers that are in the search criteria
         vector<Programmer> findProgrammers(string search);
 
-            // input : programmerId - finds the id of the programmer and computerID
-            // returns : programmer with id connecting to a computer
+            // input : computerID - id of the computer
+            // returns : vector of programmers thar are connected to computer with id computerID
         vector<Programmer> getProgrammers(int computerId);
 
             // input : p - programmer to be added
@@ -35,7 +35,7 @@ class pcService
             // programmer with Id, programerId has been deleted from the programmers table
         void deleteProgrammer(int programmerId);
 
-             // input : programmer to be updated
+             // input : p - programmer info to be updated
             // all info about programmer p has been updated
         void updateProgrammer(Programmer p);
 
@@ -43,22 +43,22 @@ class pcService
             // sets the display order for the selected programmers
         void orderProgrammersBy(string order);
 
-            // input : order - sort order
-            // sets the display order for the selected programmers
+            // input : programmerId and computerID
+            // programmer and computer are connected
         void connectProgrammerToComputer(int computerID, int programmerID);
 
 // ********* COMPUTERS *************************************************************************
 
-            // input : computerId - id of the computer
-            // returns : computer with id computerId
-        Computer getComputer(int id);
+            // input : computerID - id of the computer
+            // returns : computerinfo c for computer with id computerId
+        Computer getComputer(int computerID);
 
-            // input : computerId - finds the id of the computer
-            // returns : computer with id coputerId
+            // input : searc string
+            // returns : vector of computers that are in the search criteria
         vector<Computer> findComputers(string search);
 
-            // input : programmerId - finds the id of the programmer and computerID
-            // returns : programmer with id connecting to a computer
+            // input : programmerID - id of the programmer
+            // returns : vector of computers thar are connected to programmer with id programmerID
         vector<Computer> getComputers(int programmerID);
 
             // input : c - computer to be added
@@ -69,7 +69,7 @@ class pcService
             // computer with Id, computerId has been deleted from the computers table
         void deleteComputer(int computerId);
 
-            // input : computer to be updated
+            // input : computerinfo c to be updated
             // all info about computer c has been updated
         void updateComputer(Computer c);
 

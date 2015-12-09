@@ -21,11 +21,12 @@ class Data
            // returns : programmer with id programmerId
         Programmer getProgrammer(int programmerID);
 
-           // input : sets programmersID to vektor
-           // returns : programmersID from database to vector
+            // input : searc string
+            // returns : vector of programmers that are in the search criteria
         vector<Programmer> findProgrammers(string search);
 
-            //
+            // input : computerID - id of the computer
+            // returns : vector of programmers thar are connected to computer with id computerID
         vector<Programmer> getProgrammers(int computerID);
 
            // input : p - programmer to be added
@@ -51,15 +52,15 @@ class Data
 // ********* COMPUTERS *************************************************************************
 
            // input : computerId - id of the computer
-           // returns : computer with id computerId
+           // returns : computerdata c with id computerId
         Computer getComputer(int computerID);
 
-           // input : sets computersID to vektor
-           // returns : computersID information from database to vector
+            // input : searc string
+            // returns : vector of computers that are in the search criteria
         vector<Computer> findComputers(string search);
 
-           // input : gets computersID to vektor
-           // returns :  gets the connection between programmers and computers
+            // input : programmerID - id of the programmer
+            // returns : vector of computers thar are connected to programmer with id programmerID
         vector<Computer> getComputers(int programmerID);
 
            // input : c - computer to be added

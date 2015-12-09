@@ -14,21 +14,20 @@ using namespace std;
 
 namespace utils {    
 
-    int stringToInt(string str);
-
-    string stringToLower(string str); //stolen
-
-    string intToString(int number);
 
     char stringToGender(string str);
-
     string genderToString(char c);
 
     int yesNoToInt(string yesNo);
-
     string intToYesNo(int i);
 
     string YearOfDeathToString(int year);
+
+    // ***** following function where "borrowed" from week1 solution *****
+    int stringToInt(string str);
+    string stringToLower(string str);
+    string intToString(int number);
+    // *******************************************************************
 }
 
 #endif // UTILS_H

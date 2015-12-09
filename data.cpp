@@ -78,7 +78,7 @@ vector<Programmer> Data::findProgrammers(string search){
 vector<Programmer> Data::getProgrammers(int computerID){
     vector<Programmer> programmers;
     QSqlQuery query;
-    string sql =  string("SELECT p. * from Programmers p, BestOfBothWorlds bob")+
+    string sql =  string("SELECT p. * from Programmers p, PCConnection bob")+
                   string(" where p.programmerID = bob.programmerID and bob.computerID =") + intToString(computerID)+
                   string(" order by ") +programmersOrderBy;
     query.exec(sql.c_str());
@@ -104,7 +104,7 @@ void Data::addProgrammer(Programmer p){
 
 void Data::deleteProgrammer(int programmerID){
     QSqlQuery query;
-    string sql = string("DELETE FROM BestOfBothWorlds WHERE ProgrammerID=") +intToString(programmerID);
+    string sql = string("DELETE FROM PCConnection WHERE ProgrammerID=") +intToString(programmerID);
     query.exec(sql.c_str());
 
      sql = string("DELETE FROM Programmers WHERE ProgrammerID=") +intToString(programmerID);
@@ -123,7 +123,7 @@ void Data::orderProgrammersBy(string order){
 
 void Data::connectProgrammerToComputer(int computerID, int programmerID){
     QSqlQuery query;
-    string sql = string("insert into BestOfBothWorlds(programmerID, computerID) values(")+intToString(programmerID)+string(", ")+intToString(computerID)+string(")");
+    string sql = string("insert into PCConnection(programmerID, computerID) values(")+intToString(programmerID)+string(", ")+intToString(computerID)+string(")");
     query.exec(sql.c_str());
 
 }
@@ -177,7 +177,7 @@ vector<Computer> Data::findComputers(string search) {
 vector<Computer> Data::getComputers(int programmerID){
     vector<Computer> computers;
     QSqlQuery query;
-    string sql =  string("SELECT c. * from Computers c, BestOfBothWorlds bob")+
+    string sql =  string("SELECT c. * from Computers c, PCConnection bob")+
                   string(" where c.computerID = bob.computerID and bob.programmerID =") + intToString(programmerID)+
                   string(" order by ") +computersOrderBy;
     query.exec(sql.c_str());
@@ -203,7 +203,7 @@ void Data::addComputer(Computer c) {
 
 void Data::deleteComputer(int computerID) {
     QSqlQuery query;
-    string sql = string("DELETE FROM BestOfBothWorlds WHERE computerID=") +intToString(computerID);
+    string sql = string("DELETE FROM PCConnection WHERE computerID=") +intToString(computerID);
     query.exec(sql.c_str());
      sql = string("DELETE FROM Computers WHERE computerID=") +intToString(computerID);
     query.exec(sql.c_str());

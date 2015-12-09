@@ -22,10 +22,10 @@ int ppInterface::mainMenu(){
         cout << "********************  MAIN MENU  ******************** " << endl;
         cout << "Please choose one of the fallowing actions: " << endl;
         cout << endl;
-        cout << "1. Programmers             " << endl;
-        cout << "2. Computers               " << endl;
-        cout << "3. Programmers and Computer" << endl;
-        cout << "9. Quit                    " << endl;
+        cout << "   1. Programmers             " << endl;
+        cout << "   2. Computers               " << endl;
+        cout << "   3. Programmers and Computer" << endl;
+        cout << "   9. Quit                    " << endl;
         cout << endl;
         cout << "Action number:   ";
         cin >> choise;
@@ -61,13 +61,13 @@ void ppInterface::programmersMenu() {
         cout << "***************  PROGRAMMERS MENU  ****************** " << endl;
         cout << "Please choose one of the following actions: " << endl;
         cout << endl;
-        cout << "1. Display             " << endl;
-        cout << "2. Display order       " << endl;
-        cout << "3. Add                 " << endl;
-        cout << "4. Edit                " << endl;
-        cout << "5. Remove              " << endl;
-        cout << "6. Search              " << endl;
-        cout << "9. Back to Main Menu   " << endl;
+        cout << "   1. Display             " << endl;
+        cout << "   2. Display order       " << endl;
+        cout << "   3. Add                 " << endl;
+        cout << "   4. Edit                " << endl;
+        cout << "   5. Remove              " << endl;
+        cout << "   6. Search              " << endl;
+        cout << "   9. Back to Main Menu   " << endl;
         cout << endl;
         cout << "Action number: ";
         cin >> choose;
@@ -112,14 +112,14 @@ void ppInterface::sortProgrammersMenu() {
         cout << "Please choose one of the following actions: " << endl;
         cout << "Order programmers by :            " << endl;
         cout << endl;
-        cout << "1. Name ascending order           " << endl;
-        cout << "2. Name descending order          " << endl;
-        cout << "3. Gender ascending order         " << endl;
-        cout << "4. Gender descending order        " << endl;
-        cout << "5. Birthyear ascending order      " << endl;
-        cout << "6. Birthyear descending order     " << endl;
-        cout << "7. Year of death ascending order  " << endl;
-        cout << "8. Year of death descending order " << endl;
+        cout << "   1. Name ascending order           " << endl;
+        cout << "   2. Name descending order          " << endl;
+        cout << "   3. Gender ascending order         " << endl;
+        cout << "   4. Gender descending order        " << endl;
+        cout << "   5. Birthyear ascending order      " << endl;
+        cout << "   6. Birthyear descending order     " << endl;
+        cout << "   7. Year of death ascending order  " << endl;
+        cout << "   8. Year of death descending order " << endl;
         cout << endl;
         cout << "Choose Programmers sorting :      ";
         cin >> choose;
@@ -171,13 +171,13 @@ void ppInterface::computersMenu(){
         cout << "**************  COMPUTERS MENU  ********************* " << endl;
         cout << "Please choose one of the following actions: " << endl;
         cout << endl;
-        cout << "1. Display           " << endl;
-        cout << "2. Display order     " << endl;
-        cout << "3. Add               " << endl;
-        cout << "4. Edit              " << endl;
-        cout << "5. Remove            " << endl;
-        cout << "5. Search            " << endl;
-        cout << "9. Back to Main Menu " << endl;
+        cout << "   1. Display           " << endl;
+        cout << "   2. Display order     " << endl;
+        cout << "   3. Add               " << endl;
+        cout << "   4. Edit              " << endl;
+        cout << "   5. Remove            " << endl;
+        cout << "   6. Search            " << endl;
+        cout << "   9. Back to Main Menu " << endl;
         cout << endl;
         cout << "Action number: ";
         cin >> choose;
@@ -222,14 +222,14 @@ void ppInterface::sortComputersMenu(){
         cout << "Please choose one of the following actions: " << endl;
         cout << "Order computers by :" << endl;
         cout << endl;
-        cout << "1. Name ascending order          " << endl;
-        cout << "2. Name descending order         " << endl;
-        cout << "3. Type ascending order          " << endl;
-        cout << "4. Type descending order         " << endl;
-        cout << "5. Was it built ascending order  " << endl;
-        cout << "6. Was it built descending order " << endl;
-        cout << "7. Year built ascending order    " << endl;
-        cout << "8. Year built descending order   " << endl;
+        cout << "   1. Name ascending order          " << endl;
+        cout << "   2. Name descending order         " << endl;
+        cout << "   3. Type ascending order          " << endl;
+        cout << "   4. Type descending order         " << endl;
+        cout << "   5. Was it built ascending order  " << endl;
+        cout << "   6. Was it built descending order " << endl;
+        cout << "   7. Year built ascending order    " << endl;
+        cout << "   8. Year built descending order   " << endl;
         cout << endl;
         cout << "Choose computers display order: ";
         cin >> choose;
@@ -281,11 +281,11 @@ void ppInterface::proAndComMenu() {
         cout << "******  PROGRAMMERS AND COMPUTERS MENU  ************* " << endl;
         cout << "Please choose one of the following actions: " << endl;
         cout << endl;
-        cout << "1. Find programmers connection to computer        " << endl;
-        cout << "2. Find computers connection to programmer        " << endl;
-        cout << "3. Connect Computers and Programmers              " << endl;
-        cout << "4. display all connections                        " << endl;
-        cout << "9. Back to Main Menu                              " << endl;
+        cout << "   1. Display programmer connection to computers     " << endl;
+        cout << "   2. Display computer connection to programmers     " << endl;
+        cout << "   3. Connect Computers and Programmers              " << endl;
+        cout << "   4. display all connections                        " << endl;
+        cout << "   9. Back to Main Menu                              " << endl;
         cout << endl;
         cout << "Action number: ";
         cin >> choose;
@@ -329,10 +329,10 @@ void ppInterface::searchComputers(){
 
 void ppInterface::displayProgrammers(string search) {
     vector<Programmer> programmers = pcservice.findProgrammers(search);
-    printf("%-4s  %-40s  %-8s  %-4s  %-4s\n", "ID","Name","Gender","BirthYear","Year of Death");
+    printf("%-4s | %-40s | %-8s | %-4s | %-4s\n", "ID","Programmername","Gender","BirthYear","Year of Death");
     printf("------------------------------------------------------------------------------------------------------------------\n");
      for (unsigned int i = 0; i<programmers.size();  i++) {
-            printf("%-4i  %-40s  %-8s  %-9i  %-4s\n",
+            printf("%-4i | %-40s | %-8s | %-9i | %-4s\n",
                    programmers[i].programmerID,
                    programmers[i].Name.c_str(),
                    genderToString(programmers[i].Gender).c_str(),
@@ -456,6 +456,9 @@ void ppInterface::updateProgrammer() {
         p.DeadYear = stringToInt(sInput);
     }
      pcservice.updateProgrammer(p);
+     cout << endl;
+     cout << "Programmer has been succsessfully updated! " << endl;
+
 }
 
 void ppInterface::updateComputer() {
@@ -496,34 +499,72 @@ void ppInterface::updateComputer() {
     }
 
     pcservice.updateComputer(c);
+    cout << endl;
+    cout << "Computer has been succsessfully updated!" << endl;
+
 }
 
 void ppInterface::deleteProgrammer(){
+    string sInput;
     int programmerID;
     cout << "Delete programmer with ID: ";
-    cin >> programmerID;
+    getline(cin, sInput);
+    programmerID = stringToInt(sInput);
+
+    Programmer p = pcservice.getProgrammer(programmerID);
+    if(p.programmerID <= 0){
+        cout << "Invalid programmer ID!" << endl;
+        return;
+    }
+
     pcservice.deleteProgrammer(programmerID);
     cout << endl;
     cout << "Programmer has been succsessfully removed!" << endl;
 }
 
 void ppInterface::deleteComputer(){
+    string sInput;
     int computerID;
     cout << "Delete computer with ID: ";
-    cin >> computerID;
+    getline(cin, sInput);
+    computerID = stringToInt(sInput);
+    Computer c = pcservice.getComputer(computerID);
+
+    if(c.computerID <= 0){
+        cout << "Invalid computer ID!" << endl;
+        return;
+    }
+
     pcservice.deleteComputer(computerID);
+
     cout << endl;
     cout << "Computer has been succsessfully removed!" << endl;
 }
 
 void ppInterface::connectProgrammerToComputer(){
+    string sInput;
     int programmerID;
+    int computerID;
     cout << "Connect to the following ID's ";
     cout << "Programmers ID: ";
-    cin >> programmerID;
-    int computerID;
+    getline(cin, sInput);
+    programmerID = stringToInt(sInput);
+
+    Programmer p = pcservice.getProgrammer(programmerID);
+    if(p.programmerID <= 0){
+        cout << "Invalid programmer ID!" << endl;
+        return;
+    }
+
     cout << "Computers ID: ";
-    cin >> computerID;
+    getline(cin, sInput);
+    computerID = stringToInt(sInput);
+    Computer c = pcservice.getComputer(computerID);
+
+    if(c.computerID <= 0){
+        cout << "Invalid computer ID!" << endl;
+        return;
+    }
 
     pcservice.connectProgrammerToComputer(computerID, programmerID);
 }
@@ -534,23 +575,32 @@ void ppInterface::displayProgrammerAndComputers(){
      cin >> programmerID;
      cout << endl;
      Programmer programmer = pcservice.getProgrammer(programmerID);
+     cout << "----- PROGRAMMER --------------------------------" << endl;
+     cout << "Name          : " << programmer.Name << endl;
+     cout << "Gender        : " << genderToString(programmer.Gender) << endl;
+     cout << "Year of birth : " << intToString(programmer.BirthYear) << endl;
+     cout << "Year of death : " << YearOfDeathToString(programmer.DeadYear) << endl;
+     cout << endl;
 
-            printf("%-4i : %-40s  %-8s  %-4i  %-4s\n",
+/*            printf("%-4i : %-40s  %-8s  %-4i  %-4s\n",
                    programmer.programmerID,
                    programmer.Name.c_str(),
                    genderToString(programmer.Gender).c_str(),
                    programmer.BirthYear,
-                   intToString(programmer.DeadYear).c_str());
+                   intToString(programmer.DeadYear).c_str());*/
 
     vector<Computer> computers = pcservice.getComputers(programmerID);
-     for (unsigned int i = 0; i<computers.size();  i++) {
-            printf("%-4i : %-40s - %-45s - %-4s - %-4s\n",
+    printf("%-4s  %-40s  %-45s  %-4s  %-4s\n", "ID","Computername","Type","Built","Year");
+    printf("------------------------------------------------------------------------------------------------------------------\n");
+    for (unsigned int i = 0; i<computers.size();  i++) {
+        printf("%-4i  %-40s  %-45s  %-4s  %-4s\n",
                    computers[i].computerID,
                    computers[i].Name.c_str(),
                    computers[i].Type.c_str(),
                    intToYesNo(computers[i].WasItBuilt).c_str(),
                    intToString(computers[i].YearBuilt).c_str());
     }
+    cout << endl;
 }
 
 void ppInterface::displayComputerAndProgrammers(){
@@ -559,23 +609,23 @@ void ppInterface::displayComputerAndProgrammers(){
      cin >> computerID;
      cout << endl;
      Computer computer = pcservice.getComputer(computerID);
-
-        printf("%-4i : %-40s | %-30s | %-4s | %-4s\n",
-            computer.computerID,
-            computer.Name.c_str(),
-            computer.Type.c_str(),
-            intToYesNo(computer.WasItBuilt).c_str(),
-            intToString(computer.YearBuilt).c_str());
-
+     cout << "----- COMPUTER --------------------------------" << endl;
+     cout << "Name          : " << computer.Name << endl;
+     cout << "Type          : " << computer.Type << endl;
+     cout << "Was it built? : " << intToYesNo(computer.WasItBuilt) << endl;
+     cout << "Year built    : " <<intToString(computer.YearBuilt)<< endl;
+     cout << endl;
 
     vector<Programmer> programmers = pcservice.getProgrammers(computerID);
+    printf("%-4s | %-40s | %-8s | %-4s | %-4s\n", "ID","Programmername","Gender","BirthYear","Year of Death");
+    printf("------------------------------------------------------------------------------------------------------------------\n");
      for (unsigned int i = 0; i<programmers.size();  i++) {
-         printf("%-4i : %-40s | %-30s | %-4i | %-4s\n",
-              programmers[i].programmerID,
-              programmers[i].Name.c_str(),
-              genderToString(programmers[i].Gender).c_str(),
-              programmers[i].BirthYear,
-              intToString(programmers[i].DeadYear).c_str());
+            printf("%-4i | %-40s | %-8s | %-9i | %-4s\n",
+                   programmers[i].programmerID,
+                   programmers[i].Name.c_str(),
+                   genderToString(programmers[i].Gender).c_str(),
+                   programmers[i].BirthYear,
+                   YearOfDeathToString(programmers[i].DeadYear).c_str());
     }
 }
 
@@ -585,8 +635,6 @@ void ppInterface::displayAllConnections() {
     cout << "ID   Programmername                  <->  ID    Computername                    Typeanical computer" << endl;
     cout << "----------------------------------------------------------------------------------------------------" << endl;
      for (unsigned int i = 0; i<programmers.size();  i++) {
-
-
             computers = pcservice.getComputers(programmers[i].programmerID);
              for (unsigned int c = 0; c<computers.size();  c++) {
                     printf("%-4i %-30s  <->  %-4i  %-30s  %-20s\n",

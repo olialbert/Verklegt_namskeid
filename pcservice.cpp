@@ -50,8 +50,8 @@ void pcService::connectProgrammerToComputer(int computerID, int programmerID){
 // ********* COMPUTERS *************************************************************************
 
 
-Computer pcService::getComputer(int id){
-    return data.getComputer(id);
+Computer pcService::getComputer(int computerID){
+    return data.getComputer(computerID);
 }
 
 
