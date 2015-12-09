@@ -35,9 +35,9 @@ void pcService::deleteProgrammer(int programmerId){
      data.deleteProgrammer(programmerId);
 }
 
-/*void pcService::updateProgrammer(int programmerId){
-     data.updateProgrammer(programmerId);
-}*/
+void pcService::updateProgrammer(Programmer p){
+     data.updateProgrammer(p);
+}
 
 void pcService::orderProgrammersBy(string order){
     data.orderProgrammersBy(order);
@@ -49,36 +49,33 @@ void pcService::connectProgrammerToComputer(int computerID, int programmerID){
 
 // ********* COMPUTERS *************************************************************************
 
-    //
+
 Computer pcService::getComputer(int id){
     return data.getComputer(id);
 }
 
-    //
+
 vector<Computer> pcService::findComputers(string search){
     return data.findComputers(search);
 }
 
-    //
 vector<Computer> pcService::getComputers(int programmerID){
     return data.getComputers(programmerID);
 }
 
-    // input : c - computer to be added
-    // computer c as been added to the computers table
 void pcService::addComputer(Computer c){
     data.addComputer(c);
 }
 
-    // input : computerId - Id of the computer to be deleted
-    // computer with Id, computerId has been deleted from the computers table
 void pcService::deleteComputer(int computerId){
     data.deleteComputer(computerId);
 }
 
+void pcService::updateComputer(Computer c){
+    data.updateComputer(c);
+}
 
-    // input : order - sort order
-    // sets the display order for the selected computers
+
 void pcService::orderComputersBy(string order){
         data.orderComputersBy(order);
 }

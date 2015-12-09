@@ -24,7 +24,8 @@ class Data
             // ToDo add comment ...
         vector<Programmer> findProgrammers(string search);
 
-            //
+            // input : computerID - id of the computer
+            // returns : vector with programmers that are connected to computer with computerID
         vector<Programmer> getProgrammers(int computerID);
 
             // input : p - programmer to be added
@@ -35,8 +36,9 @@ class Data
             // programmer with Id, programerId has been deleted from the programmers table
         void deleteProgrammer(int programmerID);
 
-            //
-        //void updateProgrammer(int programmerId);
+            // input : programmer to be updated
+            // all info about programmer p has been updated
+        void updateProgrammer(Programmer p);
 
              // input : order - sort order
             // sets the display order for the selected programmers
@@ -62,6 +64,10 @@ class Data
             // input : computerId - Id of the computer to be deleted
             // computer with Id, computerId has been deleted from the computers table
         void deleteComputer(int computerID);
+
+            // input : computer to be updated
+            // all info about computer c has been updated
+        void updateComputer(Computer c);
 
             // input : order - sort order
             // sets the display order for the selected computers

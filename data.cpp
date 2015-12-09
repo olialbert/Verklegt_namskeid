@@ -39,6 +39,7 @@ Programmer Data::getProgrammer(int programmerID){
     string sql =  string("select * from Programmers  where programmerID=") +intToString(programmerID);
     query.exec(sql.c_str());
     Programmer p;
+    p.programmerID = 0;
 
 
     if(query.next())
@@ -114,11 +115,11 @@ void Data::deleteProgrammer(int programmerID){
     query.exec(sql.c_str());
 }
 
-/*void Data::updateProgrammer(Programmer p){
+void Data::updateProgrammer(Programmer p){
     QSqlQuery query;
-    string sql = "UPDATE Customers SET Name ='Ada Lovelace', Gender = 'Female', BirthYear = '', DeadYear = ''  WHERE ProgrammerID=" + p.
+    string sql = string("UPDATE Programmers SET Name ='" ) + p.Name+ string("', Gender = '")+p.Gender+string("', BirthYear = ")+intToString(p.BirthYear)+string(", DeadYear = ")+intToString(p.DeadYear)+string("  WHERE ProgrammerID=") + intToString(p.programmerID);
     query.exec(sql.c_str());
-}*/
+}
 
 void Data::orderProgrammersBy(string order){
     programmersOrderBy = order;
@@ -198,8 +199,6 @@ vector<Computer> Data::getComputers(int programmerID){
     return computers;
 }
 
-    // input : c - computer to be added
-    // computer c as been added to the computers table
 void Data::addComputer(Computer c) {
     QSqlQuery query;
     string sql = string("insert into Computers(name, type, wasitbuilt, yearbuilt) values('")+c.Name+string("','")+c.Type+string("',")+intToString(c.WasItBuilt)+string(",")+intToString(c.YearBuilt)+string(")");
@@ -207,13 +206,17 @@ void Data::addComputer(Computer c) {
     cout << sql << endl;
 }
 
-    // input : computerId - Id of the computer to be deleted
-    // computer with Id, computerId has been deleted from the computers table
 void Data::deleteComputer(int computerID) {
     QSqlQuery query;
     string sql = string("DELETE FROM BestOfBothWorlds WHERE computerID=") +intToString(computerID);
     query.exec(sql.c_str());
      sql = string("DELETE FROM Computers WHERE computerID=") +intToString(computerID);
+    query.exec(sql.c_str());
+}
+
+void Data::updateComputer(Computer c) {
+    QSqlQuery query;
+    string sql = string("UPDATE Computers SET Name ='" ) + c.Name+ string("', Type = '")+c.Type+string("', WasItBuilt = ")+intToString(c.WasItBuilt)+string(", YearBuilt = ")+intToString(c.YearBuilt)+string("  WHERE ComputerID=") + intToString(c.computerID);
     query.exec(sql.c_str());
 }
 

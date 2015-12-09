@@ -68,10 +68,9 @@ void ppInterface::programmersMenu() {
         cout << "1. Display             " << endl;
         cout << "2. Search              " << endl;
         cout << "3. Add                 " << endl;
-        cout << "4. Remove              " << endl;
-        cout << "5. Display order       " << endl;
-        cout << "6. Connect to computer " << endl;
-        cout << "7. displ conn " << endl;          //TODO
+        cout << "4. Edit                " << endl;
+        cout << "5. Remove              " << endl;
+        cout << "6. Display order       " << endl;
         cout << "9. Back to Main Menu   " << endl;
         cout << endl;
         cout << "Action number: ";
@@ -90,17 +89,14 @@ void ppInterface::programmersMenu() {
             addProgrammer();
             break;
         case '4':
+            updateProgrammer();
+            break;
+        case '5':
            displayProgrammers("");
            deleteProgrammer();
             break;
-        case '5':
-            sortProgrammersMenu();
-            break;
         case '6':
-            connectProgrammerToComputer();
-            break;
-        case '7':
-            displayProgrammerAndComputers();
+            sortProgrammersMenu();
             break;
         default:
             if(choose != '9')
@@ -384,10 +380,7 @@ void ppInterface::addProgrammer() {
         cout << "Invalid BirthYear, programmer was not added !" << endl;
         return;
     }
-    else
-    {
-        p.BirthYear = stringToInt(b);
-    }
+    p.BirthYear = stringToInt(b);
 
     string d;
     cout << "Year of Death     : " ;
@@ -421,9 +414,77 @@ void ppInterface::addComputer() {
     if (c.YearBuilt <= 1500){
         cout << endl;
         cout << "Invalid year, computer was not added" << endl;
+        return;
     }
-    else
         pcservice.addComputer(c);
+}
+
+void ppInterface::updateProgrammer() {
+    string programmerID;
+    cout << "Edit programmer with ID number : ";
+    getline(cin, programmerID);
+
+    Programmer p = pcservice.getProgrammer(stringToInt(programmerID));
+
+    if(p.programmerID <= 0){
+        cout << "Invalid programmer ID!" << endl;
+        return;
+    }
+
+    string sInput;
+    cout << "Name (" << p.Name << ") : ";
+    getline(cin, sInput);
+    if (sInput.length()>0) {
+        p.Name = sInput;
+    }
+
+    cout << "Gender (" << genderToString(p.Gender) << ")  : " ;
+    getline(cin, sInput);
+    if (sInput.length()>0) {
+        p.Gender = stringToGender(sInput);
+    }
+
+    cout << "BirthYear (" << intToString(p.BirthYear) << ") : " ;
+    getline(cin, sInput);
+    if (stringToInt(sInput) > 1500 ){
+        p.BirthYear = stringToInt(sInput);
+    }
+
+    cout << "Year of Death (" << YearOfDeathToString(p.DeadYear) << ") : " ;
+    getline(cin, sInput);
+    if (stringToInt(sInput) > 1500 ){
+        p.DeadYear = stringToInt(sInput);
+    }
+     pcservice.updateProgrammer(p);
+}
+
+void ppInterface::updateComputer() {
+
+    Computer c;
+
+    cout << "Name : " ;
+    getline(cin, c.Name);
+
+    cout << "Type  : " ;
+    getline(cin, c.Type);
+
+
+    cout << "Was it built (YES/NO)? : " ;
+    string wb;
+    getline(cin, wb);
+    c.WasItBuilt = yesNoToInt(wb);
+
+    cout << "Year built : " ;
+    string yb;
+    getline(cin, yb);
+    c.YearBuilt = stringToInt(yb);
+    if (c.YearBuilt <= 1500){
+        cout << endl;
+        cout << "Invalid year, computer was not added" << endl;
+        return;
+    }
+
+    //pcservice.addComputer(c);
 }
 
 void ppInterface::deleteProgrammer(){
@@ -511,13 +572,7 @@ void ppInterface::displayAllConnections() {
     cout << "ID   Programmername                  <->  ID    Computername                    Typeanical computer" << endl;
     cout << "----------------------------------------------------------------------------------------------------" << endl;
      for (unsigned int i = 0; i<programmers.size();  i++) {
-          /*printf("%-4i : %-40s\n",
-                   programmers[i].programmerID,
-                   programmers[i].Name.c_str());
-                   /*,
-                   genderToString(programmers[i].Gender).c_str(),
-                   programmers[i].BirthYear,
-                   intToString(programmers[i].DeadYear).c_str()*/
+
 
             computers = pcservice.getComputers(programmers[i].programmerID);
              for (unsigned int c = 0; c<computers.size();  c++) {
@@ -527,27 +582,13 @@ void ppInterface::displayAllConnections() {
                            computers[c].computerID,
                            computers[c].Name.c_str(),
                            computers[c].Type.c_str());
-                            /*,
-                           intToYesNo(computers[c].WasItBuilt).c_str(),
-                           intToString(computers[c].YearBuilt).c_str()*/
+
         }
 
      }
 
 }
 
-/*
-void ppInterface::displayAll(){
-    vector<Computer> computers = pcservice.getComputers(programmerID);
-    for (unsigned int i = 0; i<computers.size();  i++) {
-       printf("%-4i : %-40s - %-45s - %-4s - %-4s\n",
-              computers[i].computerID,
-              computers[i].Name.c_str(),
-              computers[i].Type.c_str(),
-              intToYesNo(computers[i].WasItBuilt).c_str(),
-              intToString(computers[i].YearBuilt).c_str());
-}
-}
-*/
+
 
 

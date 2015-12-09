@@ -32,7 +32,10 @@ class pcService
             // input : programmerId - Id of the programmer to be deleted
             // programmer with Id, programerId has been deleted from the programmers table
         void deleteProgrammer(int programmerId);
-        void updateProgrammer(int programmerId);
+
+             // input : programmer to be updated
+            // all info about programmer p has been updated
+        void updateProgrammer(Programmer p);
 
              // input : order - sort order
             // sets the display order for the selected programmers
@@ -59,9 +62,14 @@ class pcService
             // computer with Id, computerId has been deleted from the computers table
         void deleteComputer(int computerId);
 
+            // input : computer to be updated
+            // all info about computer c has been updated
+        void updateComputer(Computer c);
+
             // input : order - sort order
             // sets the display order for the selected computers
         void orderComputersBy(string order);
+
 
     private:
         Data data;

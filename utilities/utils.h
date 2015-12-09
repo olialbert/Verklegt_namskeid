@@ -13,7 +13,6 @@ using namespace std;
  */
 
 namespace utils {    
-    vector<string> splitString(string line, char delimeter);
 
     int stringToInt(string str);
 
@@ -26,6 +25,7 @@ namespace utils {
     string genderToString(char c);
 
     int yesNoToInt(string yesNo);
+
     string intToYesNo(int i);
 
     string YearOfDeathToString(int year);
