@@ -62,10 +62,10 @@ void ppInterface::programmersMenu() {
         cout << "Please choose one of the following actions: " << endl;
         cout << endl;
         cout << "1. Display             " << endl;
-        cout << "2. Search              " << endl;
+        cout << "2. Display order       " << endl;
         cout << "3. Add                 " << endl;
         cout << "4. Remove              " << endl;
-        cout << "5. Display order       " << endl;
+        cout << "5. Search              " << endl;
         cout << "6. Connect to computer " << endl;
         cout << "7. display connection " << endl;          //TODO
         cout << "9. Back to Main Menu   " << endl;
@@ -80,7 +80,7 @@ void ppInterface::programmersMenu() {
             displayProgrammers("");
             break;
         case '2':
-            searchProgrammers();
+            sortProgrammersMenu();
             break;
         case '3':
             addProgrammer();
@@ -90,7 +90,7 @@ void ppInterface::programmersMenu() {
            deleteProgrammer();
            break;
         case '5':
-           sortProgrammersMenu();
+           searchProgrammers();
            break;
         case '6':
            connectProgrammerToComputer();
@@ -176,10 +176,10 @@ void ppInterface::computersMenu(){
         cout << "Please choose one of the following actions: " << endl;
         cout << endl;
         cout << "1. Display           " << endl;
-        cout << "2. Search            " << endl;
+        cout << "2. Display order     " << endl;
         cout << "3. Add               " << endl;
-        cout << "4. Delete            " << endl;
-        cout << "5. Display order     " << endl;
+        cout << "4. Remove            " << endl;
+        cout << "5. Search            " << endl;
         cout << "9. Back to Main Menu " << endl;
         cout << endl;
         cout << "Action number: ";
@@ -192,7 +192,7 @@ void ppInterface::computersMenu(){
             displayComputers("");
             break;
         case '2':
-            searchComputers();
+            sortComputersMenu();
             break;
         case '3':
             addComputer();
@@ -202,7 +202,7 @@ void ppInterface::computersMenu(){
            deleteComputer();
             break;
         case '5':
-            sortComputersMenu();
+            searchComputers();
             break;
         default:
             if(choose != '9')
@@ -281,11 +281,11 @@ void ppInterface::proAndComMenu() {
         cout << "******  PROGRAMMERS AND COMPUTERS MENU  ************* " << endl;
         cout << "Please choose one of the following actions: " << endl;
         cout << endl;
-        cout << "1. Display pro to computer                  " << endl;
-        cout << "2. Display computer to pro                  " << endl;
-        cout << "3. Connect Computer an Programmer           " << endl;
-        cout << "4. display all connections                  " << endl;
-        cout << "9. Back to Main Menu                        " << endl;
+        cout << "1. Find programmers connection to computer        " << endl;
+        cout << "2. Find computers connection to programmer        " << endl;
+        cout << "3. Connect Computers and Programmers              " << endl;
+        cout << "4. display all connections                        " << endl;
+        cout << "9. Back to Main Menu                              " << endl;
         cout << endl;
         cout << "Action number: ";
         cin >> choose;
