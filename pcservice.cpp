@@ -75,7 +75,6 @@ void pcService::updateComputer(Computer c){
     data.updateComputer(c);
 }
 
-
 void pcService::orderComputersBy(string order){
         data.orderComputersBy(order);
 }
