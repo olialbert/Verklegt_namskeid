@@ -6,11 +6,11 @@ using namespace std;
 // stuct that contains information about programmer
 
 struct Programmer {
-    int programmerID;
+    int    programmerID;
     string Name;
-    char Gender;
-    int BirthYear;
-    int DeadYear;
+    char   Gender;
+    int    BirthYear;
+    int    DeadYear;
 };
 
 #endif
