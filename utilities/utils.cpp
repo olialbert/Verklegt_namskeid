@@ -5,39 +5,6 @@
 using namespace std;
 
 namespace utils {
-    /*vector<string> splitString(string line, char delimeter)  haegt ad taka tetta ut ?????
-    {
-        vector<string> result;
-
-        string currentWord = "";
-
-        for (unsigned int i = 0; i < line.length(); i++) 
-        {
-            char currentChar = line[i];
-
-            if (currentChar == delimeter) 
-            {
-                if  (currentWord.length()) {
-                    result.push_back(currentWord);
-                    currentWord = "";
-                }
-            } 
-            else 
-            {
-                if (currentChar != '\n') 
-                {
-                    currentWord += currentChar;
-                }
-            }
-        }
-
-        if (currentWord.length()) 
-        {
-            result.push_back(currentWord);
-        }
-
-        return result;
-    }*/
 
     int stringToInt(string str){
         return atoi(str.c_str());

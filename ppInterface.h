@@ -39,6 +39,9 @@ class ppInterface
         void addProgrammer();
         void addComputer();
 
+        void updateProgrammer();
+        void updateComputer();
+
           // asks for nr of the programmer to delete and removes him from the list
         void deleteProgrammer();
         void deleteComputer();
