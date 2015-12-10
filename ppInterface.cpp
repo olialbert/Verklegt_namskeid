@@ -296,12 +296,15 @@ void ppInterface::proAndComMenu() {
 
         switch (choose){
         case '1':
+            displayProgrammers("");
             displayProgrammerAndComputers();
             break;
         case '2':
+            displayComputers("");
             displayComputerAndProgrammers();
             break;
         case '3':
+            displayAllConnections();
             connectProgrammerToComputer();
             break;
         case '4':
